@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Navbar/>
+    <Purchase/>
   </div>
 </template>
 
 <script setup>
-import Navbar from './components/Navbar.vue';
+import Purchase from './pages/user/Purchase.vue';
 </script>
