@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Purchase/>
+    <Home/>
   </div>
 </template>
 
 <script setup>
-import Purchase from './pages/user/Purchase.vue';
+import Home from './pages/Home.vue';
 </script>
