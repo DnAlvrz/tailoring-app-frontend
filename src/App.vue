@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Purchase/>
+    <LandingNavbar/>
   </div>
 </template>
 
 <script setup>
-import Purchase from './pages/user/Purchase.vue';
+import LandingNavbar from './components/Landing.Navbar.vue';
 </script>

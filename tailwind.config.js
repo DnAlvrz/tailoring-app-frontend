@@ -15,7 +15,11 @@ export default {
       'tertiary': ['#ACA7CB'],
       'quaternary': ['#FF00EA']
     },
-    extend: {},
+    extend: {
+      backgroundImage:{
+        'hero-img': "url('./src/assets/undraw_empty_cart_co35.svg')",
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
