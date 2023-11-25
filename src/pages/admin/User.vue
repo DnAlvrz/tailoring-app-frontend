@@ -64,225 +64,10 @@
                                 </div>
                             </div>
                         </div>
-                        <table class="w-full text-sm text-left rtl:text-right font-roboto text-gray-500">
-                            <thead class="text-xs text-primary-0 uppercase bg-tertiary-0">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Name
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Address
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Status
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white border-b hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="../../assets/vue.svg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Neil Sims</div>
-                                            <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                                        </div>  
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Recodo, Zamboanga City
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Bonnie Green</div>
-                                            <div class="font-normal text-gray-500">bonnie@flowbite.com</div>
-                                        </div>
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Designer
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-2.jpg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Jese Leos</div>
-                                            <div class="font-normal text-gray-500">jese@flowbite.com</div>
-                                        </div>
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Ayala, Zamboanga City
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Thomas Lean</div>
-                                            <div class="font-normal text-gray-500">thomes@flowbite.com</div>
-                                        </div>
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Upper Calarian, Zamboanga City
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Leslie Livingston</div>
-                                            <div class="font-normal text-gray-500">leslie@flowbite.com</div>
-                                        </div>
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Upper Calarian, Zmaboanga City
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Offline
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Leslie Livingston</div>
-                                            <div class="font-normal text-gray-500">leslie@flowbite.com</div>
-                                        </div>
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Upper Calarian, Zmaboanga City
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Offline
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Leslie Livingston</div>
-                                            <div class="font-normal text-gray-500">leslie@flowbite.com</div>
-                                        </div>
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Upper Calarian, Zmaboanga City
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Offline
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white hover:bg-gray-50">
-                                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-4.jpg" alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">Leslie Livingston</div>
-                                            <div class="font-normal text-gray-500">leslie@flowbite.com</div>
-                                        </div>
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Upper Calarian, Zmaboanga City
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center">
-                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Offline
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
-                                        <a href="#" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Remove</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <TableUser/>
                     </div>
                 </div>
-                <div>
-                    <div class="flex justify-center items-center mt-10">
-                        <nav aria-label="Page navigation example">
-                            <ul class="inline-flex -space-x-px text-sm">
-                                <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700">Previous</a>
-                                </li>
-                                <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">1</a>
-                                </li>
-                                <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
-                                </li>
-                                <li>
-                                <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700">3</a>
-                                </li>
-                                <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">4</a>
-                                </li>
-                                <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">5</a>
-                                </li>
-                                <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+                <NavPage/>
             </div>
         </div>
     </div>
@@ -290,32 +75,15 @@
  
 <script setup>
 import Sidebar from '../../components/Sidebar.vue';
+import NavPage from '../../components/admin/pagination/Nav.Page.vue';
+import TableUser from '../../components/admin/tables/Table.User.vue';
  import { onMounted } from 'vue'
  import { 
-     initAccordions, 
-     initCarousels, 
-     initCollapses, 
-     initDials, 
-     initDismisses, 
-     initDrawers, 
      initDropdowns, 
-     initModals, 
-     initPopovers, 
-     initTabs, 
-     initTooltips } from 'flowbite'
+     } from 'flowbite'
  
  // initialize components based on data attribute selectors
  onMounted(() => {
-     initAccordions();
-     initCarousels();
-     initCollapses();
-     initDials();
-     initDismisses();
-     initDrawers();
      initDropdowns();
-     initModals();
-     initPopovers();
-     initTabs();
-     initTooltips();
  })
  </script>
