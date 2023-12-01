@@ -1,9 +1,9 @@
 <template>
   <div>
-    <NavbarVue/>
+    <Home/>
   </div>
 </template>
 
 <script setup>
-import NavbarVue from './components/Navbar.vue';
+import Home from './pages/Home.vue';
 </script>
