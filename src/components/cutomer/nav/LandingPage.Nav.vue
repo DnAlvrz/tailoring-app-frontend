@@ -32,24 +32,9 @@
                             </svg>
                         </button>
                     </div>
-                    <button type="button" class="flex text-sm bg-primary-0 border rounded-full md:me-0 focus:ring-4 focus:ring-tertiary-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                        <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 rounded-full" src="../assets/vue.svg" alt="user photo">
+                    <button class="md:me-0">
+                        <font-awesome-icon icon="fa-solid fa-user" style="color: #474554; height: 20px;" />
                     </button>
-                    <!-- Dropdown menu -->
-                    <div class="z-50 hidden my-4 text-base list-none bg-primary-0 divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
-                        <ul class="py-2" aria-labelledby="user-menu-button">
-                        <li>
-                            <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Account</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Purchase</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Sign out</a>
-                        </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </nav>

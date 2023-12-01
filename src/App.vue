@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Home/>
+    <LandingPageVue/>
   </div>
 </template>
 
 <script setup>
-import Home from './pages/Home.vue';
+import LandingPageVue from './pages/cutomer/LandingPage.vue';
 </script>

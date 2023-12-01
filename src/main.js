@@ -10,11 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
 import { 
     faUserSecret,
-    faBell
+    faBell,
+    faUser
 } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faUserSecret, faBell)
+library.add(faUserSecret, faBell, faUser)
 
 import './style.css'
 import router from '@/plugins/router'
