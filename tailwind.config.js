@@ -12,12 +12,14 @@ export default {
     colors:{
       'primary': ['#FCFCFC'],
       'secondary': ['#474554'],
-      'tertiary': ['#ACA7CB'],
-      'quaternary': ['#FF00EA']
+      'tertiary': ['#ACA7CB']
     },
     extend: {
       backgroundImage:{
-        'hero-img': "url('./src/assets/undraw_empty_cart_co35.svg')",
+        'shirt': "url('./src/assets/T-shirt.jpg')",
+        'pants': "url('./src/assets/Pants.jpg')",
+        'shorts': "url('./src/assets/Shorts.jpg')",
+        'cloth': "url('./src/assets/cloth.jpg')",
       }
     },
   },
