@@ -1,13 +1,9 @@
 <template>
-  <ul>
-    <li><router-link :to="{name:'home'}">Home</router-link></li>
-    <li><router-link :to="{name:'products'}">Product</router-link></li>
-    <li><router-link :to="{name:'admin'}">Admin</router-link></li>
-    <li><router-link :to="{name:'orders'}">Order</router-link></li>
-  </ul>
-  <router-view/> 
+  <div>
+    <SidebarVue/>
+  </div>
 </template>
 
 <script setup>
-import {RouterView, RouterLink} from 'vue-router'
+import SidebarVue from './components/Sidebar.vue';
 </script>

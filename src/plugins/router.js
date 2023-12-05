@@ -2,10 +2,34 @@ import { createRouter, createWebHistory } from "vue-router";
 
 
 const routes = [
-    {path:'', name:'home', component: ()=> import('@/pages/Home.vue')},
-    {path:'/products', name:'products', component: ()=> import('@/pages/Product.vue')},
-    {path:'/admin', name:'admin', component: ()=> import('@/pages/Admin.vue')},
-    {path:'/orders', name:'orders', component: ()=> import('@/pages/Order.vue')}
+    {
+        path:'/', 
+        name:'admin', 
+        component: ()=> import('@/pages/Admin.vue')
+    },
+
+    // {path:'', name:'home', component: ()=> import('@/pages/Home.vue')},
+    {
+        path:'/products', 
+        name:'products', 
+        component: ()=> import('@/pages/admin/Product.vue')
+    },
+    {
+        path:'/orders', 
+        name:'orders', 
+        component: ()=> import('@/pages/admin/Order.vue')
+    },
+    {
+        path:'/users',
+        name: 'users',
+        component: ()=> import('@/pages/admin/User.vue')
+    },
+    {
+        path:'/inbox',
+        name: 'inbox',
+        component: ()=> import('@/pages/admin/Inbox.vue')
+    }
+    
 ];
 
 
