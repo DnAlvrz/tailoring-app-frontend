@@ -4,8 +4,8 @@
           <LoginRegisterNav/>
       </header>
       
-      <main class="flex-1 flex md:mt-16 items-center md:items-start justify-center">
-        <div class="p-8 md:w-auto max-md:max-w-lg w-full">
+      <main class="flex-1 flex items-center md:items-start justify-center">
+        <div class="p-8  md:w-auto max-md:max-w-lg w-full">
           <!-- card -->
           <div class="flex w-full shadow border rounded-3xl">
               <!-- 1st content -->
@@ -18,24 +18,49 @@
                       <h1 class="font-bold text-3xl text-secondary-0 font-roboto">REGISTER</h1>
                   </div>
                   <form>
-                      <div class="mb-6">
-                          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
-                          <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required>
-                      </div> 
-                      <div class="mb-6">
-                          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                          <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required>
-                      </div>
+                    <div class="grid gap-6 mb-6 md:grid-cols-2">
+                        <div>
+                            <label for="first_name" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">First name</label>
+                            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="John" required>
+                        </div>
+                        <div>
+                            <label for="last_name" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">Last name</label>
+                            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="Doe" required>
+                        </div>
+                        <div>
+                            <label for="BD" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">Birthdate</label>
+                            <input type="date" id="BD" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg cursor-pointer focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" required>
+                        </div>  
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">Phone number</label>
+                            <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="(+63)9123456789" pattern="^(09|\+639)\d{9}$" required>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="address" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">Location</label>
+                        <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="Dacon Homes Recodo, Zamboanga City" required>
+                    </div> 
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">Email address</label>
+                        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="john.doe@gmail.com" required>
+                    </div> 
+                    <div class="mb-6">
+                        <label for="password" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">Password</label>
+                        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="•••••••••" required>
+                    </div> 
+                    <div class="mb-6">
+                        <label for="confirm_password" class="block mb-2 text-sm text-secondary-0 font-roboto font-semibold">Confirm password</label>
+                        <input type="password" id="confirm_password" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="•••••••••" required>
+                    </div> 
                       <div class="text-center mb-6">
-                          <span>Already have an account? <br> <a class="text-blue-500 hover:underline" href="">Sign Up</a></span>
+                          <span>Already have an account? <br> <a class="text-blue-500 hover:underline" href="">Log In</a></span>
                       </div>
-                      <button type="submit" class="text-white bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center">REGISTER</button>
+                      <button type="submit" class="text-white bg-tertiary-0 hover:bg-secondary-0 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center">REGISTER</button>
                   </form>
               </div>
           </div>
         </div>
       </main>
-  
       <footer class="bg-primary-0 shadow mt-auto">
           <div class="w-full p-4">
             <h1 class="text-sm text-center text-gray-500">© 2023 Tailoring System. All Rights Reserved.
