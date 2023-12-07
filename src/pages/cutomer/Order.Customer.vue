@@ -1,0 +1,198 @@
+<template>
+    <Navbar/>
+   <div class="mt-[9rem] lg:mt-[8rem]">
+      <div class="max-w-screen-xl flex flex-row gap-2 mx-auto p-4">
+            <div>
+                <div class="h-full p-3 space-y-2 w-56">
+                    <div class="flex items-center p-2 space-x-4">
+                        <img src="../../assets/vue.svg" alt="" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h2 class="text-lg font-semibold">Username</h2>
+                            <span class="flex items-center space-x-1">
+                                <a rel="noopener noreferrer" href="#" class="text-xs hover:underline">Edit profile</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="divide-y dark:divide-gray-700">
+                        <ul class="pt-2 pb-4 space-y-1 text-sm">
+                            <li class="dark:bg-gray-800 dark:text-gray-50">
+                                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-400">
+                                        <path d="M68.983,382.642l171.35,98.928a32.082,32.082,0,0,0,32,0l171.352-98.929a32.093,32.093,0,0,0,16-27.713V157.071a32.092,32.092,0,0,0-16-27.713L272.334,30.429a32.086,32.086,0,0,0-32,0L68.983,129.358a32.09,32.09,0,0,0-16,27.713V354.929A32.09,32.09,0,0,0,68.983,382.642ZM272.333,67.38l155.351,89.691V334.449L272.333,246.642ZM256.282,274.327l157.155,88.828-157.1,90.7L99.179,363.125ZM84.983,157.071,240.333,67.38v179.2L84.983,334.39Z"></path>
+                                    </svg>
+                                    <span>My Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-400">
+                                        <path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
+                                    </svg>
+                                    <span>My Purchase</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current dark:text-gray-400">
+                                        <path d="M448.205,392.507c30.519-27.2,47.8-63.455,47.8-101.078,0-39.984-18.718-77.378-52.707-105.3C410.218,158.963,366.432,144,320,144s-90.218,14.963-123.293,42.131C162.718,214.051,144,251.445,144,291.429s18.718,77.378,52.707,105.3c33.075,27.168,76.861,42.13,123.293,42.13,6.187,0,12.412-.273,18.585-.816l10.546,9.141A199.849,199.849,0,0,0,480,496h16V461.943l-4.686-4.685A199.17,199.17,0,0,1,448.205,392.507ZM370.089,423l-21.161-18.341-7.056.865A180.275,180.275,0,0,1,320,406.857c-79.4,0-144-51.781-144-115.428S240.6,176,320,176s144,51.781,144,115.429c0,31.71-15.82,61.314-44.546,83.358l-9.215,7.071,4.252,12.035a231.287,231.287,0,0,0,37.882,67.817A167.839,167.839,0,0,1,370.089,423Z"></path>
+                                        <path d="M60.185,317.476a220.491,220.491,0,0,0,34.808-63.023l4.22-11.975-9.207-7.066C62.918,214.626,48,186.728,48,156.857,48,96.833,109.009,48,184,48c55.168,0,102.767,26.43,124.077,64.3,3.957-.192,7.931-.3,11.923-.3q12.027,0,23.834,1.167c-8.235-21.335-22.537-40.811-42.2-56.961C270.072,30.279,228.3,16,184,16S97.928,30.279,66.364,56.206C33.886,82.885,16,118.63,16,156.857c0,35.8,16.352,70.295,45.25,96.243a188.4,188.4,0,0,1-40.563,60.729L16,318.515V352H32a190.643,190.643,0,0,0,85.231-20.125,157.3,157.3,0,0,1-5.071-33.645A158.729,158.729,0,0,1,60.185,317.476Z"></path>
+                                    </svg>
+                                    <span>Messanges</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full p-4">
+                <div class="p-2 flex justify-between">
+                    <a class="" href="">                    <span class="ml-6">
+                        <font-awesome-icon icon="fa-solid fa-arrow-left" style="color: #000004;" />
+                        Back</span></a>
+                    <span>Order Completed</span>
+
+                </div>
+                <div class="mt-10">
+                    <div class="flex justify-between mx-5 items-center">
+                        <div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-blue-500 rounded-full flex items-center justify-center font-bold text-white">
+                            <font-awesome-icon icon="fa-solid fa-check" style="color: #ffff;" />
+                        </div>
+                        <div class="flex-grow h-2 md:h-3 bg-blue-500"></div>
+                        <div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-blue-500 rounded-full flex items-center justify-center font-bold text-gray-600">
+                            <font-awesome-icon icon="fa-solid fa-truck" style="color: #ffff;" />
+                        </div>
+                        <div class="flex-grow h-2 md:h-3 bg-gray-300"></div>
+                        <div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">
+                            <font-awesome-icon icon="fa-solid fa-boxes-packing" style="color: #3059a1;" />
+                        </div>
+                        <div class="flex-grow h-2 md:h-3 bg-gray-300"></div>
+                        <div class="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-gray-300 rounded-full flex items-center justify-center font-bold text-gray-600">
+                            <font-awesome-icon icon="fa-solid fa-star" style="color: #0751cf;" />
+                        </div>
+                    </div>
+                    <div class="flex justify-between mb-4 md:mb-8 text-sm md:text-base w-full">
+                        <div class="text-center text-blue-500">Order Confirmed</div>
+                        <div class="text-center pr-2 text-gray-600">Order Shipped Out</div>
+                        <div class="text-center pr-4 text-gray-600">Order Received</div>
+                        <div class="text-center text-gray-600">Order Complete</div>
+                    </div>
+                </div>
+             
+    <div class="px-4 md:px-6 2xl:container 2xl:mx-auto">
+  <div class="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
+    <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
+      <div class="flex flex-col justify-start items-start px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
+        <a href="">
+                <div class="p-4">
+                    <div class="flex flex-row">
+                        <div class="flex flex-row">
+                            <div class="flex h-36 items-center">
+                                <img class=" w-full" src="../../assets/cloth.jpg" alt="">
+                            </div>
+                            <div class="p-2 ">
+                                <h5 class="font-roboto text-secondary-0 line-clamp-2 text-base font-medium uppercase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minima omnis nulla odio officiis, atque autem quo consequatur doloribus. Ea expedita adipisci eos ipsa saepe doloremque aperiam ratione velit veritatis.</h5>
+                                <p class="text-gray-400 font-roboto text-sm">Category: <span>Shorts</span></p>
+                                <span class="text-gray-600 font-roboto text-md">x1</span>
+                            </div>
+                        </div>
+                        <div class="w-[7rem] grid place-content-center p-4">
+                            <span class="font-roboto text-secondary-0">$199</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="p-4">
+                    <div class="flex flex-row">
+                        <div class="flex flex-row">
+                            <div class="flex h-36 items-center">
+                                <img class=" w-full" src="../../assets/cloth.jpg" alt="">
+                            </div>
+                            <div class="p-2 ">
+                                <h5 class="font-roboto text-secondary-0 line-clamp-2 text-base font-medium uppercase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minima omnis nulla odio officiis, atque autem quo consequatur doloribus. Ea expedita adipisci eos ipsa saepe doloremque aperiam ratione velit veritatis.</h5>
+                                <p class="text-gray-400 font-roboto text-sm">Category: <span>Shorts</span></p>
+                                <span class="text-gray-600 font-roboto text-md">x1</span>
+                            </div>
+                        </div>
+                        <div class="w-[7rem] grid place-content-center p-4">
+                            <span class="font-roboto text-secondary-0">$199</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+      </div>
+      <div class="flex justify-center md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
+        <div class="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 dark:bg-gray-800 space-y-6">
+          <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Summary</h3>
+          <div class="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
+            <div class="flex justify-between w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Subtotal</p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600">$56.00</p>
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Discount <span class="bg-gray-200 p-1 text-xs font-medium dark:bg-white dark:text-gray-800 leading-3 text-gray-800">STUDENT</span></p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600">-$28.00 (50%)</p>
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <p class="text-base dark:text-white leading-4 text-gray-800">Shipping</p>
+              <p class="text-base dark:text-gray-300 leading-4 text-gray-600">$8.00</p>
+            </div>
+          </div>
+          <div class="flex justify-between items-center w-full">
+            <p class="text-base dark:text-white font-semibold leading-4 text-gray-800">Total</p>
+            <p class="text-base dark:text-gray-300 font-semibold leading-4 text-gray-600">$36.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-50 dark:bg-gray-800 w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
+      <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Customer</h3>
+      <div class="flex flex-col md:flex-row xl:flex-col justify-start items-stretch h-full w-full md:space-x-6 lg:space-x-8 xl:space-x-0">
+        <div class="flex flex-col justify-start items-start flex-shrink-0">
+          <div class="flex justify-center w-full md:justify-start items-center space-x-4 py-8 border-b border-gray-200">
+            <img src="https://i.ibb.co/5TSg7f6/Rectangle-18.png" alt="avatar" />
+            <div class="flex justify-start items-start flex-col space-y-2">
+              <p class="text-base dark:text-white font-semibold leading-4 text-left text-gray-800">David Kent</p>
+              <p class="text-sm dark:text-gray-300 leading-5 text-gray-600">10 Previous Orders</p>
+            </div>
+          </div>
+  
+          <div class="flex justify-center text-gray-800 dark:text-white md:justify-start items-center space-x-4 py-4 border-b border-gray-200 w-full">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="cursor-pointer text-sm leading-5 ">david89@gmail.com</p>
+          </div>
+        </div>
+        <div class="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0">
+          <div class="flex justify-center md:justify-start xl:flex-col flex-col md:space-x-6 lg:space-x-8 xl:space-x-0 space-y-4 xl:space-y-12 md:space-y-0 md:flex-row items-center md:items-start">
+            <div class="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4 xl:mt-8">
+              <p class="text-base dark:text-white font-semibold leading-4 text-center md:text-left text-gray-800">Shipping Address</p>
+              <p class="w-48 lg:w-full dark:text-gray-300 xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">180 North King Street, Northhampton MA 1060</p>
+            </div>
+            <div class="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4">
+              <p class="text-base dark:text-white font-semibold leading-4 text-center md:text-left text-gray-800">Billing Address</p>
+              <p class="w-48 lg:w-full dark:text-gray-300 xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">180 North King Street, Northhampton MA 1060</p>
+            </div>
+          </div>
+          <div class="flex w-full justify-center items-center md:justify-start md:items-start">
+            <button class="mt-6 md:mt-0 dark:border-white dark:hover:bg-gray-900 dark:bg-transparent dark:text-white py-5 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 border border-gray-800 w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Edit Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+      </div>
+  
+  
+    </div>
+      </div>
+  </template>
+  
+  <script setup>
+  import Navbar from '../../components/Navbar.vue';
+  </script>

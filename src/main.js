@@ -11,11 +11,25 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { 
     faUserSecret,
     faBell,
-    faUser
+    faUser,
+    faCheck,
+    faTruck,
+    faArrowLeft,
+    faBoxesPacking,
+    faStar
 } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faUserSecret, faBell, faUser)
+library.add(
+    faUserSecret, 
+    faBell, 
+    faUser, 
+    faCheck, 
+    faTruck,
+    faArrowLeft,
+    faBoxesPacking,
+    faStar
+    )
 
 import './style.css'
 import router from '@/plugins/router'

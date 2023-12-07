@@ -1,13 +1,14 @@
 <template>
-    <nav class="bg-white/80 max-w-full  py-4 backdrop:blur-md z-10 fixed top-0 left-0 right-0">
-        <div class=" flex items-center justify-between mx-20">
-            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse max-lg:hidden">
+    <nav class="lg:bg-white/80 bg-primary-0 max-w-full  py-4 backdrop:blur-md z-10 fixed top-0 left-0 right-0">
+        <div class=" flex flex-col items-center sm:flex-row sm:justify-evenly mx-5">
+            <a href="#" class="flex items-center sm:flex-row  flex-col space-x-3 select-none rtl:space-x-reverse">
                 <svg class="w-6 h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
                     <path d="M19 0H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1ZM2 6v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6H2Zm11 3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0h2a1 1 0 0 1 2 0v1Z"/>
                 </svg>
                 <span class="self-center text-2xl text-secondary-0 font-roboto font-semibold whitespace-nowrap">Tailoring System</span>
             </a>
-            <div>
+            <div class="flex gap-4 sm:gap-10 mt-4">
+                <div>
                 <form>   
                     <label for="default-search" class="mb-2 text-sm font-medium font-roboto text-secondary-0 sr-only">Search</label>
                     <div class="relative">
@@ -20,7 +21,7 @@
                     </div>
                 </form>
             </div>
-            <div class="flex items-center max-lg:gap-6 gap-10 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <div class="flex items-center sm:gap-8 gap-2 sm:order-2 space-x-3 sm:space-x-0 rtl:space-x-reverse">
                 <div class="mb-4">
                     <button class="relative py-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="file: mt-4 h-6 w-6 text-secondary-0">
@@ -28,10 +29,12 @@
                         </svg>
                     </button>
                 </div>
-                <button class="md:me-0">
+                <button class="sm:me-0">
                     <font-awesome-icon icon="fa-solid fa-user" style="color: #474554; height: 20px;" />
                 </button>
             </div>
+            </div>
+
         </div>
     </nav>
 </template>

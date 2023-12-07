@@ -1,9 +1,11 @@
 <template>
   <div>
-    <LandingPageVue/>
+    <Login/>
   </div>
 </template>
 
 <script setup>
-import LandingPageVue from './pages/cutomer/LandingPage.vue';
+// import OrderCustomer from './pages/cutomer/Order.Customer.vue';
+// import LandingPage from './pages/cutomer/LandingPage.vue';
+import Login from './pages/Login.vue';
 </script>

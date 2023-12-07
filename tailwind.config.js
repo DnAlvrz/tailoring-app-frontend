@@ -8,6 +8,7 @@ export default {
   theme: {
     fontFamily:{
       'roboto': ['Roboto', 'sans-serif'],
+      'lato': ['Lato', 'sans-serif']
     },
     colors:{
       'primary': ['#FCFCFC'],
@@ -24,7 +25,7 @@ export default {
     },
   },
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
   ]
 };
 
