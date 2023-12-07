@@ -88,15 +88,11 @@
     })
     const submit = async () => {
         const backendUrl = import.meta.env.VITE_BACKEND_URL;
-        console.log(backendUrl)
-        console.log(productModel)
         const config = {
             headers: {
                 Authorization: ' test token',
             }
         };
-
-        const response = await axios.post(`${backendUrl}/products`, productModel.value,config);
-        console.log(response);
+        const response = await axios.post(`${backendUrl}/products`, productModel.value, config);
     }
 </script>
