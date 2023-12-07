@@ -113,8 +113,6 @@
               </div>
             </div>
           </a>
-
-
         </div>
         <div class="flex justify-center items-center mt-10">
           <button type="button" class="text-primary-0 bg-tertiary-0 hover:bg-secondary-0 font-medium lg:text-sm text-xs px-5 py-2.5 me-2 mb-2">SEE MORE</button>
