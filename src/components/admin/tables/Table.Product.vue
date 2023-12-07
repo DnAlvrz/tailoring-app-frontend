@@ -149,7 +149,6 @@
                     <DeleteModal/>
                 </td>
             </tr>
-            
         </tbody>
     </table>
 </template>

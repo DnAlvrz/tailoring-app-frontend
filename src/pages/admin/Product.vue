@@ -7,7 +7,7 @@
                 <span class="font-roboto text-sm text-secondary-0">14th August 2023</span>
             </div>
             <div class="pb-12 pt-2">
-                <AddProductModal/>
+                <AddProductModal />
             </div>
             <div class="relative overflow-x-auto">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -74,16 +74,16 @@
     </div>
 </template>
  
- <script setup>
+<script setup>
+
+import { onMounted } from 'vue'
+import { initDropdowns, initModals} from 'flowbite'
 import Sidebar from '../../components/Sidebar.vue';
 import NavPage from '../../components/admin/pagination/Nav.Page.vue';
 import TableProductVue from '../../components/admin/tables/Table.Product.vue';
 import AddProductModal from '../../components/admin/modals/Add.Product.Modal.vue';
- import { onMounted } from 'vue'
- import { 
-     initDropdowns, 
-     initModals, 
-     } from 'flowbite'
+
+
  
  // initialize components based on data attribute selectors
  onMounted(() => {
