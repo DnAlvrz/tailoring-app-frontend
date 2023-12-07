@@ -12,10 +12,7 @@
                     Stock
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Availability
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Shipping Fee
+                    category
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Action
@@ -23,132 +20,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="bg-white border-b hover:bg-gray-50">
+            <tr v-for="product in props.products" :key="product.id" class="bg-white border-b hover:bg-gray-50" >
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Apple MacBook Pro 17
+                    {{ product.name}}
                 </th>
                 <td class="px-6 py-4">
-                    $2999
+                    {{ product.price }}
                 </td>
                 <td class="px-6 py-4">
-                    10
+                    {{ product.quantity }}
                 </td>
                 <td class="px-6 py-4">
-                    6
-                </td>
-                <td class="px-6 py-4">
-                    $2999
+                    cloths
                 </td>
                 <td class="px-6 py-4">
                     <EditProduct/>
                     <DeleteModal/>
                 </td>
             </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    15
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <EditProduct/>
-                    <DeleteModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    20
-                </td>
-                <td class="px-6 py-4">
-                    15
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <EditProduct/>
-                    <DeleteModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Apple Watch
-                </th>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    30
-                </td>
-                <td class="px-6 py-4">
-                    20
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <EditProduct/>
-                    <DeleteModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    iPad
-                </th>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    16
-                </td>
-                <td class="px-6 py-4">
-                    13
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <EditProduct/>
-                    <DeleteModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    iPad
-                </th>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    16
-                </td>
-                <td class="px-6 py-4">
-                    13
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <EditProduct/>
-                    <DeleteModal/>
-                </td>
-            </tr>
+
         </tbody>
     </table>
 </template>
@@ -156,4 +46,5 @@
 <script setup>
 import DeleteModal from '../modals/Delete.Modal.vue';
 import EditProduct from '../modals/Edit.Product.vue';
+const props = defineProps(['products'])
 </script>
