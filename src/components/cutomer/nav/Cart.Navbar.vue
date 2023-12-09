@@ -9,11 +9,12 @@
     </nav>
     <nav class="hidden md:block shadow border bg-primary-0 max-w-full  py-4 z-10 fixed top-0 left-0 right-0">
         <div class=" flex flex-col items-center sm:flex-row sm:justify-evenly mx-5">
+            <!-- connect to home -->
             <a href="#" class="flex items-center sm:flex-row  flex-col space-x-3 select-none rtl:space-x-reverse">
                 <svg class="w-6 h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
                     <path d="M19 0H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1ZM2 6v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6H2Zm11 3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0h2a1 1 0 0 1 2 0v1Z"/>
                 </svg>
-                <span class="self-center text-2xl text-secondary-0 font-roboto font-semibold whitespace-nowrap">Tailoring System</span>
+                <span class="self-center text-2xl text-secondary-0 font-roboto font-semibold whitespace-nowrap">Tailoring System <span class="font-roboto text-xl font-normal">| Cart</span></span>
             </a>
             <div class="flex gap-4 sm:gap-10 mt-4">
                 <div>
@@ -25,7 +26,7 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                             </svg>
                         </div>
-                        <input type="search" id="default-search" class="block w-[500px] max-lg:w-full p-4 ps-10 font-roboto text-sm text-secondary-0 border border-gray-300 rounded-lg bg-gray-50 focus:ring-tertiary-0 focus:border-tertiary-0" placeholder="Search our store" required>
+                        <input type="search" id="default-search" class="block w-[500px] max-lg:w-full p-4 ps-10 font-roboto text-sm text-secondary-0 border border-gray-300 rounded-lg bg-gray-50 focus:ring-tertiary-0 focus:border-tertiary-0" placeholder="Add to cart" required>
                     </div>
                 </form>
             </div>
