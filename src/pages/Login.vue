@@ -10,10 +10,10 @@
         <div class="flex w-full shadow border rounded-3xl">
             <!-- 1st content -->
             <div class="hidden md:flex justify-center bg-tertiary-0 rounded-l-3xl items-center">
-                <img class="p-8 h-auto max-w-full" src="../assets/Login.svg" alt="">
+                <img class="p-8 w-[40rem] max-w-full" src="../assets/Login.svg" alt="">
             </div>
             <!-- 2nd content -->
-            <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+            <div class="w-full px-5 md:w-1/2 py-6 md:px-10">
                 <div class="text-center mb-10">
                     <h1 class="font-bold text-3xl text-secondary-0 font-roboto">LOGIN</h1>
                 </div>
