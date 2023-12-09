@@ -1,27 +1,12 @@
 <template>
-  <div class="bg-primary-0">
-    <header>
-      <LandingPageNav />
-    </header>
-  <main class="mt-[9rem] lg:mt-[5.5rem]">
-    <div class="max-w-screen-xl bg-primary-0 flex flex-col items-center justify-between mx-auto p-4">
-      <div class="p-4 2xl:h-[88vh] w-full">
-        <div>
-          <img class="object-fill 2xl:h-[40rem] w-full" src="../../assets/landingpage.jpg" alt="">
-        </div>
-        <div class="p-5 font-lato">
-          <h1 class="font-semibold font-lato lg:text-4xl text-2xl text-center p-4 text-secondary-0">WELCOME TO OUR STORE</h1>
-          <p class="lg:text-lg text-base text-center">
-            Elevate your style with precision and panache. From T-shirts that
-            embrace comfort to shorts and pants tailored for every occasion, our
-            system weaves a story of bespoke sophistication. Choose fabrics that
-            reflect your individuality, and let every stitch narrate your unique
-            journey. In our world of tailoring, your wardrobe becomes a canvas,
-            and each garment is a brushstroke of personalized elegance.
-          </p>
-        </div>
-      </div>
-      <div class="2xl:h-[80vh]">
+  <div class="min-h-screen bg-gray-200 flex flex-col">
+    <LandingPageNav />
+  <main class="flex-1 flex md:mt-[6.5rem] mt-32 md:items-start justify-center">
+    <div class=" flex md:w-2/3 flex-col bg-primary-0 items-center justify-between mx-auto p-4">
+        <!-- landing page hero -->
+        <CardLandPageHero/>
+      <!-- lading page category -->
+      <div class="w-full flex flex-col items-center 2xl:h-[80vh]">
         <h1 class="font-lato font-semibold lg:text-4xl text-2xl text-center lg:p-4 p-2 text-secondary-0">SHOP BY CATEGORY</h1>
         <div class="grid grid-cols-2 lg:gap-4">
           <a href="#" class="card-zoom">
@@ -42,11 +27,12 @@
           </a>
         </div>
       </div>
+      <!-- landing page products -->
       <div class="py-4">
         <div>
           <h1 class="font-lato font-semibold lg:text-2xl text-base bg-tertiary-0 text-center w-full text-primary-0">FEATURED PRODUCTS</h1>
         </div>
-        <div class="grid grid-cols-2  sm:grid-cols-3 gap-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 gap-4 lg:grid-cols-5">
           <a href="#" class="flex lg:w-52 mt-3 flex-col overflow-hidden duration-500 hover:scale-105 hover:shadow-xlborder border-gray-100 bg-white shadow-md">
             <div class=" flex h-36 overflow-hidden" href="#">
               <img class="object-fill w-full" src="../../assets/Shorts.jpg" alt="product image" />
@@ -115,22 +101,20 @@
           </a>
         </div>
         <div class="flex justify-center items-center mt-10">
+            <!-- see more button -->
           <button type="button" class="text-primary-0 bg-tertiary-0 hover:bg-secondary-0 font-medium lg:text-sm text-xs px-5 py-2.5 me-2 mb-2">SEE MORE</button>
         </div>
       </div>
     </div>
   </main>
-    <footer class="bg-primary-0 shadow mt-auto">
-        <div class="w-full p-4">
-          <h1 class="text-sm text-gray-500 2xl:text-center">© 2023 Tailoring System. All Rights Reserved.
-          </h1>
-        </div>
-    </footer>
+  <Footer/>
   </div>
 </template>
 
 <script setup>
 import LandingPageNav from "../../components/cutomer/nav/LandingPage.Nav.vue";
+import CardLandPageHero from "../../components/cutomer/card/Card.LandPage.Hero.vue";
+import Footer from "../../components/cutomer/footer/Footer.vue";
 import { onMounted } from "vue";
 import {
   initAccordions,

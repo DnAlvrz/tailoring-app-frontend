@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .card-zoom {
-    @apply relative flex cursor-pointer select-none  items-center justify-center m-3 overflow-hidden shadow-xl lg:w-80 lg:h-80 w-40 h-40  rounded-2xl;
+    @apply relative flex cursor-pointer select-none  items-center justify-center m-3 overflow-hidden shadow-xl lg:w-80 lg:h-80 w-32 h-32 md:w-48 md:h-48  rounded-2xl;
   }
   .card-zoom-image {
     @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
