@@ -39,7 +39,7 @@
     <div class=" mb-2 w-full p-4 shadow border flex">
         <!-- card content -->
         <div class="flex items-center p-2 mb-10">
-        <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-tertiary-0 bg-gray-100 border-gray-300 rounded focus:ring-transparent">
+            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-tertiary-0 bg-gray-100 border-gray-300 rounded focus:ring-transparent">
         </div>
         <img src="../../../assets/cloth.jpg" alt="product-image" class="w-20 h-20 mt-2 shadow border" />
         <div class="p-2">
@@ -53,7 +53,7 @@
             <div class="mt-4 flex justify-between sm:space-y-6 md:mt-0 sm:block sm:space-x-6">
                 <div class="flex items-center">
                     <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
-                    <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" value="2" min="1" />
+                        <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" value="2" min="1" />
                     <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
                 </div>
             </div>
