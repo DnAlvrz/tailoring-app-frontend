@@ -1,11 +1,8 @@
 <template>
     <div class="min-h-screen bg-primary-0 flex flex-col">
-      <header>
-          <LoginRegisterNav/>
-      </header>
-      
+    <LoginRegisterNav/>
       <main class="flex-1 flex items-center md:items-start justify-center">
-        <div class="p-8  md:w-auto max-md:max-w-lg w-full">
+        <div class="p-8 md:w-auto max-md:max-w-lg w-full">
           <!-- card -->
           <div class="flex w-full shadow border rounded-3xl">
               <!-- 1st content -->
@@ -61,15 +58,11 @@
           </div>
         </div>
       </main>
-      <footer class="bg-primary-0 shadow mt-auto">
-          <div class="w-full p-4">
-            <h1 class="text-sm text-center text-gray-500">© 2023 Tailoring System. All Rights Reserved.
-            </h1>
-          </div>
-      </footer>
+    <Footer/>
     </div>
   </template>
   
   <script setup>
   import LoginRegisterNav from '../components/cutomer/nav/Login.Register.Nav.vue';
+  import Footer from '../components/cutomer/footer/Footer.vue';
   </script>
