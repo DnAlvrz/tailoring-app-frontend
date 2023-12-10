@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4 2xl:h-[88vh] w-full">
+    <div class="p-4 w-full">
         <div>
           <img class="object-fill 2xl:h-[40rem] w-full" src="../../../assets/landingpage.jpg" alt="">
         </div>

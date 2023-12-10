@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen bg-gray-200 flex flex-col">
     <LandingPageNav />
-  <main class="flex-1 flex md:mt-[6.5rem] mt-32 md:items-start justify-center">
-    <div class=" flex md:w-2/3 flex-col bg-primary-0 items-center justify-between mx-auto p-4">
+  <main class="flex-1 flex md:mt-[5rem] mt-[3rem] md:items-start justify-center">
+    <div class=" flex md:w-2/3 max-w-7xl flex-col bg-primary-0 items-center justify-between mx-auto p-4">
         <!-- landing page hero -->
         <CardLandPageHero/>
       <!-- lading page category -->
@@ -36,31 +36,11 @@ import Footer from "../../components/cutomer/footer/Footer.vue";
 import CardProduct from "../../components/cutomer/card/Card.Product.vue";
 import { onMounted } from "vue";
 import {
-  initAccordions,
-  initCarousels,
-  initCollapses,
-  initDials,
-  initDismisses,
-  initDrawers,
   initDropdowns,
-  initModals,
-  initPopovers,
-  initTabs,
-  initTooltips,
 } from "flowbite";
 
 // initialize components based on data attribute selectors
 onMounted(() => {
-  initAccordions();
-  initCarousels();
-  initCollapses();
-  initDials();
-  initDismisses();
-  initDrawers();
   initDropdowns();
-  initModals();
-  initPopovers();
-  initTabs();
-  initTooltips();
 });
 </script>

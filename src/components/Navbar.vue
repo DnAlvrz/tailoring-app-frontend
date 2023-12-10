@@ -1,28 +1,50 @@
 <template>
-    <nav class="lg:bg-white/80 bg-primary-0 max-w-full  py-4 backdrop:blur-md z-10 fixed top-0 left-0 right-0">
-        <div class=" flex flex-col lg:flex-row lg:justify-between lg:mx-20 mx-5">
-            <a href="#" class="flex items-center  lg:flex-row flex-col space-x-3 select-none rtl:space-x-reverse">
-                <svg class="w-6 h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+    <nav class="lg:bg-white/80 bg-primary-0 max-w-full border shadow backdrop:blur-md z-10 fixed top-0 left-0 right-0">
+        <div class=" flex flex-row justify-between items-center sm:flex-row sm:justify-evenly mx-5">
+            <!-- scroll up the home if press -->
+            <a href="#" class="flex items-center space-x-3 select-none">
+                <svg class="w-4 h-4 md:w-6 md:h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
                     <path d="M19 0H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1ZM2 6v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6H2Zm11 3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0h2a1 1 0 0 1 2 0v1Z"/>
                 </svg>
-                <span class="self-center text-2xl text-secondary-0 font-roboto font-semibold whitespace-nowrap">Tailoring System</span>
+                <span class="self-center text-base sm:text-2xl text-secondary-0 font-roboto font-semibold whitespace-nowrap">Tailoring System</span>
             </a>
-            <div class="flex gap-4 lg:gap-10 mt-4">
-                <div>
-                    <form>   
-                        <label for="default-search" class="mb-2 text-sm font-medium font-roboto text-secondary-0 sr-only">Search</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg class="w-4 h-4 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                                </svg>
+            <div class="flex items-center gap-4sm:gap-10">
+            <div class="p-4">
+                <!-- dropdown search for mobile view -->
+                <div class="md:hidden">
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" type="button">
+                        <font-awesome-icon icon="fa-solid fa-magnifying-glass" style="color: #474554;" />
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="dropdown" class="z-10 w-full hidden bg-white shadow">
+                        <form>   
+                            <label for="default-search" class="mb-2 text-sm font-medium font-roboto text-secondary-0 sr-only">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                </div>
+                                <input type="search" id="default-search" class="block  max-lg:w-full p-4 ps-10 font-roboto text-sm text-secondary-0 border border-gray-300 bg-gray-50 focus:ring-tertiary-0 focus:border-tertiary-0" placeholder="Search our store" required>
                             </div>
-                            <input type="search" id="default-search" class="block w-[500px] max-lg:w-full p-4 ps-10 font-roboto text-sm text-secondary-0 border border-gray-300 rounded-lg bg-gray-50 focus:ring-tertiary-0 focus:border-tertiary-0" placeholder="Search our store" required>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-                <div class="flex items-center max-lg:gap-6 gap-10 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <div class="mb-4">
+                <form class="hidden md:block">   
+                    <label for="default-search" class="mb-2 text-sm font-medium font-roboto text-secondary-0 sr-only">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-[500px] max-lg:w-full p-4 ps-10 font-roboto text-sm text-secondary-0 border border-gray-300 rounded-lg bg-gray-50 focus:ring-tertiary-0 focus:border-tertiary-0" placeholder="Search our store" required>
+                    </div>
+                </form>
+            </div>
+            <div class="flex items-center sm:gap-8 gap-2 sm:order-2 space-x-3 sm:space-x-0 rtl:space-x-reverse">
+                <div class="mb-4">
                         <button class="relative py-2">
                             <div class="t-0 absolute left-3">
                                     <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">3</p>
@@ -32,7 +54,7 @@
                             </svg>
                         </button>
                     </div>
-                    <button type="button" class="flex text-sm bg-primary-0 border rounded-full md:me-0 focus:ring-4 focus:ring-tertiary-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                <button type="button" class="flex text-sm bg-primary-0 border rounded-full md:me-0 focus:ring-4 focus:ring-tertiary-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                         <span class="sr-only">Open user menu</span>
                         <img class="w-8 h-8 rounded-full" src="../assets/vue.svg" alt="user photo">
                     </button>
@@ -49,12 +71,13 @@
                             <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Messages</a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Sign out</a>
+                            <a href="#" class="block px-4 py-2 border-t text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Sign out</a>
                         </li>
                         </ul>
                     </div>
-                </div>
             </div>
+            </div>
+
         </div>
     </nav>
 </template>
