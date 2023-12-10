@@ -10,10 +10,19 @@
 
       <div class="py-4">
         <div>
-          <h1 class="font-lato font-semibold lg:text-2xl text-base bg-tertiary-0 text-center w-full text-primary-0">FEATURED PRODUCTS</h1>
+          <h1 class="font-lato font-semibold lg:text-2xl text-base bg-tertiary-0 text-center w-full text-primary-0">OUR PRODUCTS</h1>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 gap-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 min-[600px]:grid-cols-3 sm:grid-cols-3  md:grid-cols-4 gap-4 lg:grid-cols-4">
         <!-- landing page products -->
+            <CardProduct/>
+            <CardProduct/>
+            <CardProduct/>
+            <CardProduct/>
+            <CardProduct/>
+            <CardProduct/>
+            <CardProduct/>
+            <CardProduct/>
+            <CardProduct/>
             <CardProduct/>
             <CardProduct/>
         </div>
