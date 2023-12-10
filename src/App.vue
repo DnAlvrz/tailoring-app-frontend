@@ -1,11 +1,11 @@
 <template>
   <div>
-    <LandingPage/>
+    <Profile/>
   </div>
 </template>
 
 <script setup>
-import Home from './pages/Home.vue';
 import OrderCustomer from './pages/cutomer/Order.Customer.vue';
-import LandingPage from './pages/cutomer/LandingPage.vue';
+import Purchase from './pages/cutomer/Purchase.vue';
+import Profile from './pages/cutomer/Profile.vue';
 </script>

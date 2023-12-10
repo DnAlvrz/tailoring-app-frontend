@@ -60,9 +60,6 @@
             <li class="mr-2 w-full" role="presentation">
                 <button class="inline-block w-full text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2" id="cancelled-tab" data-tabs-target="#cancelled" type="button" role="tab" aria-controls="cancelled" aria-selected="false">Cancelled</button>
             </li>
-            <li class="w-ful" role="presentation">
-                <button class="inline-block w-full text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2" id="return-tab" data-tabs-target="#return" type="button" role="tab" aria-controls="return" aria-selected="false">Return/Refund</button>
-            </li>
         </ul>
     </div>
     <div id="myTabContent">
@@ -139,9 +136,6 @@
         </div>
         <div class="bg-gray-50 p-4 rounded-lg dark:bg-gray-800 hidden" id="cancelled" role="tabpanel" aria-labelledby="cancelled-tab">
             <p class="text-gray-500 dark:text-gray-400 text-sm">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg dark:bg-gray-800 hidden" id="return" role="tabpanel" aria-labelledby="return-tab">
-            <p class="text-gray-500 dark:text-gray-400 text-sm">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
         </div>
     </div>
 </div>
