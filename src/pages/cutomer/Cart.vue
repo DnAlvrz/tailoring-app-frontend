@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen bg-gray-200 flex flex-col">
         <CartNavbar/>
-        <main class="flex-1 flex md:mt-36 mt-20 mb-14 md:items-start justify-center">
+        <main class="flex-1 flex md:mt-[6rem] mt-[5rem] md:items-start justify-center">
             <div class="rounded-lg md:w-2/3">
                 <CardCart/>
             </div>

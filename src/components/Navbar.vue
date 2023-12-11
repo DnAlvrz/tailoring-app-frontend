@@ -1,6 +1,6 @@
 <template>
     <nav class="lg:bg-white/80 bg-primary-0 max-w-full border shadow backdrop:blur-md z-10 fixed top-0 left-0 right-0">
-        <div class=" flex flex-row justify-between items-center sm:flex-row sm:justify-evenly mx-5">
+        <div class=" flex flex-row justify-between items-center sm:flex-row sm:justify-between md:justify-evenly mx-5">
             <!-- scroll up the home if press -->
             <a href="#" class="flex items-center space-x-3 select-none">
                 <svg class="w-4 h-4 md:w-6 md:h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">

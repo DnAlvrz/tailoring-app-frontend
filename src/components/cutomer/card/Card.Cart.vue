@@ -25,8 +25,8 @@
     </div>
     <div class="md:flex flex xl:hidden justify-end border-b">
         <!-- edit button -->
-        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-secondary-0 mr-2 focus:outline-none font-medium text-sm p-2.5 text-center" type="button">Edit</button>
-        <div id="dropdown" class="z-10 hidden bg-tertiary-0 shadow">
+        <button id="dropdownDefaultButton" data-dropdown-toggle="editBtn" class="text-secondary-0 mr-2 focus:outline-none font-medium text-sm p-2.5 text-center" type="button">Edit</button>
+        <div id="editBtn" class="z-10 hidden bg-tertiary-0 shadow">
             <ul class="py-2 text-sm text-primary-0 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                 <li>                  
                     <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block p-2 text-center" type="button">
@@ -49,11 +49,11 @@
                 <!-- PRODUCT CATEGORY -->
                 <p class="text-xs text-gray-500 font-roboto">Cloth</p>
                 <!-- number count of quantity of the prducts only show on mobile view -->
-                <div class="mt-4 sm:flex justify-between lg:hidden hidden sm:space-y-6 md:mt-0 sm:space-x-6">
+                <div class="mt-4 sm:flex justify-between lg:hidden hidden sm:space-y-6 md:mt-4 sm:space-x-6">
                     <div class="flex items-center">
-                    <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
+                    <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> - </span>
                         <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" value="2" min="1" />
-                    <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+                    <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> + </span>
                 </div>
                 </div>
 
@@ -61,14 +61,14 @@
             <!-- number of the quantity of the product only show in desktop view -->
             <div class="mt-4 lg:flex justify-between md:hidden hidden sm:space-y-6 md:mt-0 sm:space-x-6">
                 <div class="flex items-center">
-                    <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
+                    <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> - </span>
                         <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" value="2" min="1" />
-                    <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+                    <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> + </span>
                 </div>
             </div>
             <!-- PRODUCT PRICE -->
-            <div class="flex items-center space-x-4">
-                <p class="text-sm font-semibold text-secondary-0 font-roboto">₱449</p>
+            <div class="flex items-center sm:justify-end space-x-4">
+                <p class="text-sm font-semibold text-secondary-0 font-roboto"> <span class="text-sm md:text-sm sm:text-lg">₱449</span> </p>
             </div>
             <!-- delete button only appear on 1080p screen size -->
             <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="hidden p-2 xl:block font-roboto font-semibold text-tertiary-0 text-center" type="button">
@@ -77,9 +77,9 @@
             <!-- number of the quantity of the product only show in ipad view -->
             <div class="mt-4 flex justify-between sm:space-y-6 md:mt-0 sm:hidden sm:space-x-6">
                 <div class="flex items-center">
-                    <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
+                    <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> - </span>
                         <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" value="2" min="1" />
-                    <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+                    <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> + </span>
                 </div>
             </div>
         </div>
@@ -88,15 +88,32 @@
 </template>
 
 <script setup>
- import { onMounted } from 'vue'
- import { 
-    initDropdowns, 
-     initModals,
- } from 'flowbite'
- 
- // initialize components based on data attribute selectors
- onMounted(() => {
-     initDropdowns();
-     initModals();
- })
+import { onMounted } from 'vue'
+import { 
+ initAccordions, 
+ initCarousels, 
+ initCollapses, 
+ initDials, 
+ initDismisses, 
+ initDrawers, 
+ initDropdowns, 
+ initModals, 
+ initPopovers, 
+ initTabs, 
+ initTooltips } from 'flowbite'
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+ initAccordions();
+ initCarousels();
+ initCollapses();
+ initDials();
+ initDismisses();
+ initDrawers();
+ initDropdowns();
+ initModals();
+ initPopovers();
+ initTabs();
+ initTooltips();
+})
 </script>

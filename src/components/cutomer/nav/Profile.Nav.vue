@@ -1,6 +1,6 @@
 <template>
     <nav class="lg:bg-white/80 bg-primary-0 max-w-full border shadow backdrop:blur-md z-10 fixed top-0 left-0 right-0">
-        <div class=" flex flex-row justify-between items-center sm:flex-row sm:justify-evenly mx-5">
+        <div class=" flex flex-row justify-between items-center sm:flex-row sm:justify-between md:justify-evenly mx-5">
             <!-- scroll up the home if press -->
             <a href="#" class="flex items-center space-x-3 select-none">
                 <svg class="w-4 h-4 md:w-6 md:h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
@@ -49,14 +49,14 @@
                             <div class="t-0 absolute left-3">
                                     <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">3</p>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="file: mt-4 h-6 w-6 text-secondary-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" mt-4 h-6 w-6 text-secondary-0">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                             </svg>
                         </button>
                     </div>
                 <button type="button" class="flex text-sm bg-primary-0 border rounded-full md:me-0 focus:ring-4 focus:ring-tertiary-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                         <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 rounded-full" src="../assets/vue.svg" alt="user photo">
+                        <img class="w-8 h-8 rounded-full" src="../../../assets/vue.svg" alt="user photo">
                     </button>
                         <!-- Dropdown menu -->
                     <div class="z-50 hidden my-4 text-base list-none bg-primary-0 divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
