@@ -1,12 +1,9 @@
 <template>
   <div>
-    <OrderCustomer/>
+    <SidebarVue/>
   </div>
 </template>
 
 <script setup>
-import OrderCustomer from './pages/cutomer/Order.Customer.vue';
-import Checkout from './pages/cutomer/Checkout.vue';
-
-
+import SidebarVue from './components/Sidebar.vue';
 </script>
