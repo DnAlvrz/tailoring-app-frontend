@@ -31,6 +31,14 @@ library.add(
     faStar,
     faMagnifyingGlass,
     faChevronRight)
+    faShoppingCart,
+    faBoxesPacking,
+    faUsers
+} from '@fortawesome/free-solid-svg-icons'
+
+/* add icons to the library */
+library.add(faUserSecret, faShoppingCart, faBoxesPacking, faUsers)
+
 import './style.css'
 import router from '@/plugins/router'
 
