@@ -1,7 +1,7 @@
 <template>
     <div class="lg:block hidden w-full md:w-56">
         <div class="flex pt-10 p-2 items-center">
-            <img src="../../../assets/Shorts.jpg" alt="userphoto" class="w-12 h-12 rounded-full">
+            <img src="../../assets/Shorts.jpg" alt="userphoto" class="w-12 h-12 rounded-full">
             <div class="pl-2">
                 <h2 class="text-base font-semibold">Arjhon Lahudin</h2>
             </div>
