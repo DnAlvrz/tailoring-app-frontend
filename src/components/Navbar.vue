@@ -47,16 +47,22 @@
                 <div class="mb-4">
                         <button class="relative py-2">
                             <div class="t-0 absolute left-3">
-                                    <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">3</p>
+                                <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">3</p>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="file: mt-4 h-6 w-6 text-secondary-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" mt-4 h-6 w-6 text-secondary-0">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                             </svg>
                         </button>
                     </div>
-                <button type="button" class="flex text-sm bg-primary-0 border rounded-full md:me-0 focus:ring-4 focus:ring-tertiary-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                    <button type="button" class="flex text-sm border rounded-full md:me-0 focus:ring-4 focus:ring-tertiary-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                         <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 rounded-full" src="../assets/vue.svg" alt="user photo">
+
+                        <div class="relative inline-flex w-fit">
+                            <div class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 rounded-full bg-red-600 p-1.5 text-xs"></div>
+                            <div class="flex items-center justify-center text-center">
+                                <img class="w-8 h-8 rounded-full" src="../assets/vue.svg" alt="user photo">
+                            </div>
+                            </div>
                     </button>
                         <!-- Dropdown menu -->
                     <div class="z-50 hidden my-4 text-base list-none bg-primary-0 divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
@@ -68,7 +74,12 @@
                             <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Purchase</a>
                         </li>
                         <li>
-                            <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Messages</a>
+                            <button type="button" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">
+                                Messages
+                                <span class="inline-flex items-center justify-center w-4 h-4 ms-2 text-xs font-semibold text-primary-0 bg-tertiary-0 rounded-full">
+                                    2
+                                </span>
+                            </button>
                         </li>
                         <li>
                             <a href="#" class="block px-4 py-2 border-t text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Sign out</a>

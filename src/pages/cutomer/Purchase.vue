@@ -20,7 +20,7 @@
                     </div>
                     <div id="myTabContent">
                         <!-- Purchase tab -->
-                        <div class="flex flex-col gap-8 rounded-lg" id="purchase" role="tabpanel" aria-labelledby="purchase-tab">
+                        <div class="flex  flex-col gap-8 rounded-lg" id="purchase" role="tabpanel" aria-labelledby="purchase-tab">
                             <CardProductPurchase/>
                         </div>
                         <!-- Complete Order Tab -->

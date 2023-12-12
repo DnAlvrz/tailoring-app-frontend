@@ -1,10 +1,12 @@
 <template>
   <div>
-    <CheckoutVue/>
+    <OrderCustomer/>
   </div>
 </template>
 
 <script setup>
-import CheckoutVue from './pages/cutomer/Checkout.vue';
+import OrderCustomer from './pages/cutomer/Order.Customer.vue';
+import Checkout from './pages/cutomer/Checkout.vue';
+
 
 </script>

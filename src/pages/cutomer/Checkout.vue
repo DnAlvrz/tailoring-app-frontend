@@ -1,30 +1,30 @@
 <template>
     <div class="min-h-screen bg-gray-200 flex flex-col">
         <CheckoutNav/>
-        <main class="flex-1 flex md:mt-[1rem] mt-[3.5rem] md:items-start justify-center">
+        <main class="flex-1 flex md:mt-[1rem] mt-[1rem] md:items-start justify-center">
             <div class="rounded-lg md:w-2/3">
                 <div class="md:w-full w-screen mb-4">
                     <div class="p-4 bg-primary-0 w-full">
                         <div>
                             <h4 class="font-roboto font-semibold text-lg p-4">Delivery Address</h4>
                         </div>
-                        <div class="flex flex-row items-center gap-60">
-                            <div class="ml-5">
+                        <div class="flex flex-col lg:flex-row lg:gap-60">
+                            <div class="lg:ml-5">
                                 <p class="font-roboto font-semibold text-secondary-0">Arjhon Lahudin</p>
                                 <p class="font-roboto font-semibold text-secondary-0">091234567890</p>
                             </div>
                             <div class="mr-5">
-                                <p class="font-roboto font-semibold text-xl text-secondary-0">Dacon Homes Recodo, Zamboanga City</p>
+                                <p class="font-roboto font-semibold md:text-xl text-secondary-0">Dacon Homes Recodo, Zamboanga City</p>
                             </div>
                         </div>
                     </div>
                     <div class="bg-primary-0 mt-2">
                         <a class="shadow w-full" href="">
                             <div class="p-4 border-b">
-                                <div class="flex flex-row">
-                                    <div class="flex flex-row">
-                                        <img class="w-20 h-20 md:w-52 md:h-24" src="../../assets/cloth.jpg" alt="">
-                                        <div class="p-2">
+                                <div class="flex  justify-between flex-row">
+                                    <div class="flex items-center flex-row">
+                                        <img class="w-20 mb-2 h-20" src="../../assets/cloth.jpg" alt="">
+                                        <div class="p-2 w-52 md:w-96">
                                             <h5 class="font-roboto text-secondary-0 line-clamp-1 lg:line-clamp-2 text-base uppercase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minima omnis nulla odio officiis, atque autem quo consequatur doloribus. Ea expedita adipisci eos ipsa saepe doloremque aperiam ratione velit veritatis.</h5>
                                             <p class="text-gray-400 font-roboto text-sm">Category: <span>Shorts</span></p>
                                             <span class="text-gray-600 font-roboto text-md">x1</span>
@@ -46,15 +46,15 @@
                             <ul>
                                 <li class="flex items-center justify-between">
                                     <p class="font-roboto text-right p-2 w-full text-gray-400 text-sm">Merchandise Subtotal</p>
-                                    <span class="font-roboto w-[10%] p-2 text-right text-sm">₱1,299</span>
+                                    <span class="font-roboto lg:w-[10%] p-2 text-right text-sm">₱1,299</span>
                                 </li>
                                 <li class="flex items-center justify-between">
                                     <p class="font-roboto text-right p-2 border-gray-300 w-full text-gray-400 text-sm">Shipping Fee</p>
-                                    <span class="font-roboto p-2 w-[10%] text-right text-sm">₱100</span>
+                                    <span class="font-roboto p-2 lg:w-[10%] text-right text-sm">₱100</span>
                                 </li>
                                 <li class="flex items-center justify-between">
                                     <p class="font-roboto text-right p-2 border-gray-300 w-full text-gray-400 text-sm">Order Total</p>
-                                    <span class="font-roboto w-[10%] p-2 text-right text-xl">₱1,399</span>
+                                    <span class="font-roboto lg:w-[10%] p-2 text-right text-xl">₱1,399</span>
                                 </li>
                             </ul>
                         </div>
@@ -65,11 +65,12 @@
                 </div>
             </div>
         </main>
-        <CartFooter/>
+        <Footer/>
     </div>
 </template>
 <script setup>
 import CheckoutNav from '../../components/cutomer/nav/Checkout.Nav.vue';
+import Footer from '../../components/cutomer/footer/Footer.vue';
  import { onMounted } from 'vue'
  import { 
     initDropdowns, 

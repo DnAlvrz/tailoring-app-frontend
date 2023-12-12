@@ -70,10 +70,10 @@
                         <li>
                             <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Account</a>
                         </li>
-                        <li>
+                        <li class="lg:hidden block">
                             <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Purchase</a>
                         </li>
-                        <li>
+                        <li class="lg:hidden block">
                             <button type="button" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">
                                 Messages
                                 <span class="inline-flex items-center justify-center w-4 h-4 ms-2 text-xs font-semibold text-primary-0 bg-tertiary-0 rounded-full">

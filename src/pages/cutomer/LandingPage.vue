@@ -12,7 +12,7 @@
         <div>
           <h1 class="font-lato font-semibold lg:text-2xl text-base bg-tertiary-0 text-center w-full text-primary-0">OUR PRODUCTS</h1>
         </div>
-        <div class="grid grid-cols-2 min-[600px]:grid-cols-3 sm:grid-cols-3  md:grid-cols-4 gap-4 lg:grid-cols-4">
+        <div class="grid grid-cols-2 min-[600px]:grid-cols-3 sm:grid-cols-3  md:grid-cols-3 gap-4 xl:grid-cols-4">
         <!-- landing page products -->
             <CardProduct/>
             <CardProduct/>
