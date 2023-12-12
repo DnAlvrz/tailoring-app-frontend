@@ -1,5 +1,5 @@
 <template>
-    <a class="shadow w-full border bg-primary-0" href="">
+    <a class="shadow w-full bg-primary-0" href="">
         <div class="p-4 border-b">
             <div class="flex flex-row">
                 <div class="flex flex-row">

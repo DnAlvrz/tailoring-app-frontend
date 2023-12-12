@@ -1,11 +1,10 @@
 <template>
   <div>
-    <Messages/>
+    <CheckoutVue/>
   </div>
 </template>
 
 <script setup>
-import OrderCustomer from './pages/cutomer/Order.Customer.vue';
-import Cart from './pages/cutomer/Cart.vue';
-import Messages from './pages/cutomer/Messages.vue';
+import CheckoutVue from './pages/cutomer/Checkout.vue';
+
 </script>
