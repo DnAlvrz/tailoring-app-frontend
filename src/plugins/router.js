@@ -40,7 +40,7 @@ const routes = [
     component: () => import("@/pages/customer/Cart.vue"),
   },
   {
-    path: "/cart/checkout",
+    path: "/user/checkout",
     name: "checkout",
     component: () => import("@/pages/customer/Checkout.vue"),
   },
@@ -50,7 +50,7 @@ const routes = [
     component: () => import("@/pages/customer/Messages.vue"),
   },
   {
-    path: "/user/products",
+    path: "/products/:id",
     name: "customer products",
     component: () => import("@/pages/customer/Product.Page.vue"),
   },
