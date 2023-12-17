@@ -8,17 +8,19 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { 
-    faUserSecret,
-    faUser,
-    faCheck,
-    faTruck,
-    faArrowLeft,
-    faBoxesPacking,
-    faStar,
-    faMagnifyingGlass,
-    faChevronRight
-} from '@fortawesome/free-solid-svg-icons'
+import {
+  faUserSecret,
+  faUser,
+  faCheck,
+  faTruck,
+  faArrowLeft,
+  faBoxesPacking,
+  faStar,
+  faUsers,
+  faMagnifyingGlass,
+  faChevronRight,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
 library.add(
@@ -31,10 +33,6 @@ library.add(
     faStar,
     faMagnifyingGlass,
     faChevronRight)
-    faShoppingCart,
-    faBoxesPacking,
-    faUsers
-} from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
 library.add(faUserSecret, faShoppingCart, faBoxesPacking, faUsers)
