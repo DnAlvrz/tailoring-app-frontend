@@ -111,8 +111,8 @@
 </template>
 
 <script setup>
-import ProfileNav from '../../components/cutomer/nav/Profile.Nav.vue';
-import Footer from '../../components/cutomer/footer/Footer.vue';
+import ProfileNav from '../../components/customer/nav/Profile.Nav.vue';
+import Footer from '../../components/customer/footer/Footer.vue';
 import SidebarAccount from '../../components/Sidebar/Sidebar.Account.vue';
 import { onMounted } from 'vue'
 import { 

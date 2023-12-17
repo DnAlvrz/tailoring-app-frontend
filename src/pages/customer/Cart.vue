@@ -10,9 +10,9 @@
     </div>
 </template>
 <script setup>
-import CartNavbar from '../../components/cutomer/nav/Cart.Navbar.vue';
-import CardCart from '../../components/cutomer/card/Card.Cart.vue';
-import CartFooter from '../../components/cutomer/footer/Cart.Footer.vue';
+import CartNavbar from '../../components/customer/nav/Cart.Navbar.vue';
+import CardCart from '../../components/customer/card/Card.Cart.vue';
+import CartFooter from '../../components/customer/footer/Cart.Footer.vue';
  import { onMounted } from 'vue'
  import { 
     initDropdowns, 

@@ -138,8 +138,8 @@
 </template>
 <script setup>
 import Navbar from '../../components/Navbar.vue';
-import ProductFooter from '../../components/cutomer/footer/Product.Footer.vue';
-import Footer from '../../components/cutomer/footer/Footer.vue';
+import ProductFooter from '../../components/customer/footer/Product.Footer.vue';
+import Footer from '../../components/customer/footer/Footer.vue';
  import { onMounted } from 'vue'
  import { 
     initDropdowns, 

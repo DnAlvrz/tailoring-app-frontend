@@ -38,11 +38,11 @@
 </template>
 
 <script setup>
-import LandingPageNav from "../../components/cutomer/nav/LandingPage.Nav.vue";
-import CardLandPageHero from "../../components/cutomer/card/Card.LandPage.Hero.vue";
-import CardCategory from "../../components/cutomer/card/Card.Category.vue";
-import Footer from "../../components/cutomer/footer/Footer.vue";
-import CardProduct from "../../components/cutomer/card/Card.Product.vue";
+import LandingPageNav from "../../components/customer/nav/LandingPage.Nav.vue";
+import CardLandPageHero from "../../components/customer/card/Card.LandPage.Hero.vue";
+import CardCategory from "../../components/customer/card/Card.Category.vue";
+import Footer from "../../components/customer/footer/Footer.vue";
+import CardProduct from "../../components/customer/card/Card.Product.vue";
 import { onMounted } from "vue";
 import {
   initDropdowns,

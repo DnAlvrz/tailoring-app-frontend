@@ -69,8 +69,8 @@
     </div>
 </template>
 <script setup>
-import CheckoutNav from '../../components/cutomer/nav/Checkout.Nav.vue';
-import Footer from '../../components/cutomer/footer/Footer.vue';
+import CheckoutNav from '../../components/customer/nav/Checkout.Nav.vue';
+import Footer from '../../components/customer/footer/Footer.vue';
  import { onMounted } from 'vue'
  import { 
     initDropdowns, 
