@@ -2,6 +2,7 @@
   <div>
     <SidebarVue/>
   </div>
+   <RouterView/>
 </template>
 
 <script setup>

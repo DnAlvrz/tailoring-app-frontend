@@ -103,7 +103,7 @@
          </ul>
       </div>
    </aside>
-   <RouterView/>
+  
 </template>
 
 <script setup>

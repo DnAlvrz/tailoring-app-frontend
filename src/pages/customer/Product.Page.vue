@@ -3,13 +3,13 @@
         <Navbar/>
         <main class="flex-1 flex mb-14 md:mt-[6rem] mt-[5rem] md:items-start justify-center">
             <div class="rounded-lg md:w-2/3">
-                <div>
+                <div v-if="!isLoading">
                     <div class="border-b lg:flex lg:flex-row bg-primary-0 border-gray-300">
                         <div class=" flex h-60 lg:h-auto lg:w-[70%] overflow-hidden" href="#">
                             <img class="object-fill w-full" src="../../assets/Shorts.jpg" alt="product image" />
                         </div>
                         <div class="p-4">
-                            <h2 class="font-roboto font-semibold lg:text-2xl text-secondary-0 line-clamp-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor distinctio, vel debitis facilis ipsam similique quasi quidem explicabo sit qui commodi ad aut cum laboriosam! Impedit ut aliquam sapiente quasi.</h2>
+                            <h2 class="font-roboto font-semibold lg:text-2xl text-secondary-0 line-clamp-2">{{ product.name }}</h2>
                             <p class="font-roboto font-semibold lg:text-xl pt-2 lg:pt-4">₱449</p>
                             <div class="flex mt-2 lg:mt-4 items-center">
                                 <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> - </span>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="p-2 bg-primary-0 mt-2  pl-2">
                         <h3 class="font-roboto py-4 border-b text-secondary-0 font-semibold">Description</h3>
-                        <p class="font-roboto text-secondary-0 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, et libero alias minima vitae vel perferendis doloremque soluta facere, officia dolore culpa odio molestiae quos aut aliquid totam, voluptas saepe.</p>
+                        <p class="font-roboto text-secondary-0 mt-2">{{ product.description }}</p>
                     </div>
                     <div>
                         <div class="bg-primary-0 py-4 border-b p-2 mt-2 pl-2">
@@ -137,18 +137,44 @@
     </div>
 </template>
 <script setup>
-import Navbar from '../../components/Navbar.vue';
+import Navbar from '@/components/Navbar.vue';
+import { useRoute } from "vue-router"
 import ProductFooter from '../../components/customer/footer/Product.Footer.vue';
 import Footer from '../../components/customer/footer/Footer.vue';
- import { onMounted } from 'vue'
+import axios from 'axios'
+ import { onMounted, ref } from 'vue'
  import { 
     initDropdowns, 
      initModals,
  } from 'flowbite'
- 
+
+const route = useRoute()
+const isLoading = ref(true);
+const product = ref(null)
+ const getProduct = async () => {
+    console.log(route.params.id)
+    try {
+        isLoading.value = true;
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const config = {
+            headers: {
+                Authorization: ' test token',
+            }
+        };
+        const res = await axios.get(`${backendUrl}/products/${route.params.id}`, config)
+        product.value = res.data.product
+        console.log(product)
+    } catch (error) {
+        console.log(error)
+    } finally {
+        isLoading.value = false;
+        console.log(isLoading)
+    }
+}
  // initialize components based on data attribute selectors
  onMounted(() => {
      initDropdowns();
      initModals();
+     getProduct();
  })
 </script>
