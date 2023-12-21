@@ -10,7 +10,7 @@
                         </div>
                         <div class="p-4">
                             <h2 class="font-roboto font-semibold lg:text-2xl text-secondary-0 line-clamp-2">{{ product.name }}</h2>
-                            <p class="font-roboto font-semibold lg:text-xl pt-2 lg:pt-4">₱449</p>
+                            <p class="font-roboto font-semibold lg:text-xl pt-2 lg:pt-4">₱ {{ product.price }}</p>
                             <div class="flex mt-2 lg:mt-4 items-center">
                                 <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> - </span>
                                     <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" value="2" min="1" />
@@ -37,7 +37,7 @@
                                 <p class="text-xs text p-2 text-gray-400">8.0 <span class="pl-2">|</span> <span class="pl-2">10Sold</span></p>
                             </div>
                             <div class="lg:flex hidden mt-6 ml-7 flex-row gap-4">
-                                <button type="button" class="text-white bg-tertiary-0 lg:px-6 border border-red-500 hover:bg-secondary-0 p-4 font-medium text-sm focus:outline-none">Add to Cart</button>
+                                <button v-on:click="addToCart" type="button" class="text-white bg-tertiary-0 lg:px-6 border border-red-500 hover:bg-secondary-0 p-4 font-medium text-sm focus:outline-none">Add to Cart</button>
                                 <button type="button" class="text-white  bg-red-500 lg:px-8 border border-red-500 hover:bg-tertiary-0 p-4 font-medium text-sm focus:outline-none">Buy Now</button>
                             </div>
                         </div>
@@ -151,25 +151,28 @@ import axios from 'axios'
 const route = useRoute()
 const isLoading = ref(true);
 const product = ref(null)
- const getProduct = async () => {
+const addToCart = async () => {
     console.log(route.params.id)
-    try {
-        isLoading.value = true;
-        const backendUrl = import.meta.env.VITE_BACKEND_URL;
-        const config = {
-            headers: {
-                Authorization: ' test token',
-            }
-        };
-        const res = await axios.get(`${backendUrl}/products/${route.params.id}`, config)
-        product.value = res.data.product
-        console.log(product)
-    } catch (error) {
-        console.log(error)
-    } finally {
-        isLoading.value = false;
-        console.log(isLoading)
-    }
+}
+const getProduct = async () => {
+console.log(route.params.id)
+try {
+    isLoading.value = true;
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const config = {
+        headers: {
+            Authorization: ' test token',
+        }
+    };
+    const res = await axios.get(`${backendUrl}/products/${route.params.id}`, config)
+    product.value = res.data.product
+    console.log(product)
+} catch (error) {
+    console.log(error)
+} finally {
+    isLoading.value = false;
+    console.log(isLoading)
+}
 }
  // initialize components based on data attribute selectors
  onMounted(() => {

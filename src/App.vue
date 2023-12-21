@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SidebarVue/>
+    <!-- <SidebarVue/> -->
   </div>
    <RouterView/>
 </template>
