@@ -24,10 +24,12 @@
 
                     <!-- Modal body -->
                     <div class="p-4 md:p-5 space-y-4">
-                        <!-- <div>
-                            <label class="block mb-2 text-sm font-medium font-roboto text-secondary-0" for="file_input">Upload file</label>
-                            <input class="block w-full text-sm text-secondary-0 border border-gray-300 rounded-lg cursor-pointer bg-gray-5 focus:outline-none" aria-describedby="file_input_help" id="file_input" type="file" required>
-                        </div> -->
+                        <div>
+                            <Uploader
+                                :server="imagesUrl"
+                                @change="changeMedia"
+                            />
+                        </div>
                             <div class="grid gap-6 mb-6 md:grid-cols-2">
                                 <div>
                                     <label for="product-name" class="block mb-2 font-roboto text-sm font-medium text-secondary-0">Product Name</label>
@@ -76,7 +78,9 @@
 <script setup>
     import {ref} from 'vue';
     import axios from 'axios';
-
+    import Uploader from 'vue-media-upload';
+    const backendUrl = ref(import.meta.env.VITE_BACKEND_URL);
+    const imagesUrl = ref(`${backendUrl.value}/images/products`)
     const productModel = ref({
         name:'',
         quantity:0,
@@ -84,15 +88,21 @@
         price:0,
         category:'',
         description:'',
-        
-    })
+    });
+    const media = ref([]);
+
+    const changeMedia = (newMedia) => {
+        media.value = newMedia
+    }
+
+
     const submit = async () => {
-        const backendUrl = import.meta.env.VITE_BACKEND_URL;
         const config = {
             headers: {
                 Authorization: ' test token',
             }
         };
-        const response = await axios.post(`${backendUrl}/products`, productModel.value, config);
+        const data = { ...productModel.value, images: media.value }
+        const response = await axios.post(`${backendUrl.value}/products`,data, config);
     }
 </script>
