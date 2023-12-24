@@ -1,6 +1,6 @@
 <script setup>
     import axios from 'axios';
-    import { onMounted, ref, onBeforeMount } from 'vue'
+    import { onMounted, ref } from 'vue'
     import { initDropdowns, initModals } from 'flowbite'
     import Sidebar from '@/components/Sidebar.vue';
     import NavPage from '@/components/admin/pagination/Nav.Page.vue';
@@ -24,7 +24,6 @@
             console.log(error)
         } finally {
             isLoading.value=false;
-            console.log(isLoading)
         }
     }
     // initialize components based on data attribute selectors
