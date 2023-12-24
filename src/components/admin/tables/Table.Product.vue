@@ -35,7 +35,7 @@
                 </td>
                 <td class="px-6 py-4">
                     <EditProduct/>
-                    <DeleteModal/>
+                    <DeleteModal :product-id="product.id"/>
                 </td>
             </tr>
 
