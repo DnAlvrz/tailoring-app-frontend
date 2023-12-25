@@ -36,7 +36,7 @@
                                     <input  v-model="productModel.name" type="text" id="product-name" class="bg-primary-0 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="Enter Product Name" required>
                                 </div>
                                 <div>
-                                    <label for="product-serial-number" class="block mb-2 font-roboto text-sm font-medium text-secondary-0">Product Name</label>
+                                    <label for="product-serial-number" class="block mb-2 font-roboto text-sm font-medium text-secondary-0">Product Serial Number</label>
                                     <input  v-model="productModel.productId" type="text" id="product-serial-number" class="bg-primary-0 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="Enter Product Name" required>
                                 </div>
                                 <div>
