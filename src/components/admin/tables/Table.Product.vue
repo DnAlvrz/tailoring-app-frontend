@@ -31,11 +31,11 @@
                     {{ product.quantity }}
                 </td>
                 <td class="px-6 py-4">
-                    cloths
+                    {{ product.category }}
                 </td>
                 <td class="px-6 py-4">
-                    <EditProduct/>
-                    <DeleteModal/>
+                    <EditProduct :product="product"/>
+                    <DeleteModal :product-id="product.id"/>
                 </td>
             </tr>
 
