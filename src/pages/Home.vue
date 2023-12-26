@@ -7,22 +7,11 @@
           <CardCategoryHome/>
         <div class="py-4">
           <div>
-            <h1 class="font-lato font-semibold lg:text-2xl text-base bg-tertiary-0 text-center w-full text-primary-0">FEATURED PRODUCTS</h1>
+            <h1 class="font-lato font-semibold lg:text-2xl text-base bg-tertiary-0 text-center w-full text-primary-0">OUR PRODUCTS</h1>
           </div>
-          <div class="grid grid-cols-2 min-[600px]:grid-cols-3 sm:grid-cols-3  md:grid-cols-4 gap-4 lg:grid-cols-4">
+          <div class="grid grid-cols-2 min-[600px]:grid-cols-3 sm:grid-cols-3  md:grid-cols-4 gap-4 lg:grid-cols-4" v-if="!isLoading" >
           <!-- landing page products -->
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
-              <CardHomeProduct/>
+              <CardHomeProduct v-for="product in products" :key="product.id" :product="product"/>
           </div>
           <div class="flex justify-center items-center mt-10">
               <nav aria-label="Page navigation example">
@@ -69,18 +58,38 @@
 </template>
 
 <script setup>
-import Navbar from '../components/Navbar.vue';
-import CardHomeProduct from '../components/cutomer/card/Card.Home.Product.vue';
-import CardCategoryHome from '../components/cutomer/card/Card.Category.Home.vue';
-import Footer from '../components/cutomer/footer/Footer.vue';
-import { onMounted } from 'vue'
- import { 
-     initDropdowns, 
-  } from 'flowbite'
- 
+import axios from 'axios';
+import Navbar from '@/components/Navbar.vue';
+import CardHomeProduct from '@/components/customer/card/Card.Home.Product.vue';
+import CardCategoryHome from '@/components/customer/card/Card.Category.Home.vue';
+import Footer from '@/components/customer/footer/Footer.vue';
+import { onMounted, ref } from 'vue'
+import { 
+  initDropdowns, 
+} from 'flowbite'
+const isLoading = ref(true);
+const products = ref([]);
+const getProducts = async () => {
+  try {
+    isLoading.value = true;
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const config = {
+      headers: {
+        Authorization: ' test token',
+      }
+    };
+    const res = await axios.get(`${backendUrl}/products`, config)
+    products.value = res.data.products
+  } catch (error) {
+    console.log(error)
+  } finally {
+    isLoading.value = false;
+  }
+}
  // initialize components based on data attribute selectors
  onMounted(() => {
      initDropdowns();
+     getProducts();
  })
 </script>
 
