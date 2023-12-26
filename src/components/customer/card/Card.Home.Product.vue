@@ -1,15 +1,15 @@
 <template>
     <a href="#" class="flex lg:w-52 mt-3 flex-col overflow-hidden duration-500 hover:scale-105 hover:shadow-xlborder border-gray-100 bg-white shadow-md">
         <div class=" flex h-36 overflow-hidden" href="#">
-            <img class="object-fill w-full" src="../../../assets/Pants.jpg" alt="product image" />
+            <img class="object-fill w-full" :src="imageUrl" alt="product image" />
         </div>
         <div class=" p-5 min-h-[112px] flex flex-col justify-between">
             <div href="#">
-                <h5 class="lg:text-xl font-lato text-base tracking-tight line-clamp-2 text-slate-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum culpa velit earum tempora architecto laudantium, repellat maxime, pariatur, doloribus ut voluptatibus inventore fugiat in. Aliquam nesciunt assumenda quo accusamus nobis?</h5>
+                <h5 class="lg:text-xl font-lato text-base tracking-tight line-clamp-2 text-slate-900">{{ props.product.name }}</h5>
             </div>
             <div class="mt-4 flex flex-col gap-3">
                 <p>
-                    <span class="lg:text-3xl font-lato text-2xl font-bold text-slate-900">₱449</span>
+                    <span class="lg:text-3xl font-lato text-2xl font-bold text-slate-900">₱{{ props.product.price }}</span>
                 </p>
                 <div class="flex items-center">
                     <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -33,3 +33,11 @@
         </div>
     </a>
 </template>
+
+
+<script setup>
+import { onMounted, ref } from 'vue'
+const props = defineProps(['product']);
+const imageUrl = ref(`${import.meta.env.VITE_IMAGES_URL}/${props.product.images[0].name}`)
+
+</script>
