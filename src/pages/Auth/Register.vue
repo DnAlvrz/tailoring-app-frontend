@@ -13,15 +13,26 @@
 <script setup>
 import {ref} from 'vue'
 import axios from 'axios';
+const isLoading = ref(false)
 import LoginRegisterNav from '@/components/customer/nav/Login.Register.Nav.vue';
 import Footer from '@/components/customer/footer/Footer.vue';
 import CardRegister from '@/components/auth/card/Card.Register.vue';
 const backendUrl = ref(import.meta.env.VITE_BACKEND_URL);
 
 const register = async (user) => {
-  console.log(user.value);
-  const response = await axios.post(`${backendUrl.value}/auth/register`, user.value);
-  console.log(response)
+  try {
+    isLoading.value = true;
+    const response = await axios.post(`${backendUrl.value}/auth/register`, user.value);
+    if (response.status === 201) {
+      window.location.href = '/login';
+    }
+  } catch (error) {
+    console.log(error)
+  }
+  finally {
+    isLoading.value=false;
+  }
+
 }
 
 </script>
