@@ -8,6 +8,16 @@ const routes = [
     component: () => import("@/pages/customer/LandingPage.vue"),
   },
   {
+    path: "/login",
+    name: "login",
+    component: () => import("@/pages/Auth/Login.vue"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () => import("@/pages/Auth/Register.vue"),
+  },
+  {
     path: "/products",
     name: "products",
     component: () => import("@/pages/Home.vue"),
