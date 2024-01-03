@@ -31,7 +31,6 @@ const login = async (credentials) => {
     }
     const response = await axios.post(`${import.meta.env.VITE_BACKEND_AUTH}`, data);
     if (response.status === 200 && response.data  && response.data.access_token) {
-    
       const config = {
         headers: {
           Authorization: `Bearer ${response.data.access_token}` 
@@ -44,8 +43,9 @@ const login = async (credentials) => {
         id: userData.data.id,
         name: userData.data.first_name +" " +userData.data.last_name,
         token: response.data.access_token,
-        access_level: userData.data.access_level ? userData.data.access_level : 2
-      }));  
+        access_level: userData.data.access_level ? userData.data.access_level : 2,
+      })); 
+      window.location.href = '/products';
     }
   } catch (error) {
     console.log(error)
@@ -53,7 +53,6 @@ const login = async (credentials) => {
   finally {
     isLoading.value = false;
   }
-
 }
 
 </script>
