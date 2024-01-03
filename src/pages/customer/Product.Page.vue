@@ -37,7 +37,7 @@
                                 <p class="text-xs text p-2 text-gray-400">8.0 <span class="pl-2">|</span> <span class="pl-2">10Sold</span></p>
                             </div>
                             <div class="lg:flex hidden mt-6 ml-7 flex-row gap-4">
-                                <button v-on:click="addToCart" type="button" class="text-white bg-tertiary-0 lg:px-6 border border-red-500 hover:bg-secondary-0 p-4 font-medium text-sm focus:outline-none">Add to Cart</button>
+                                <button @click="addToCart" type="button" class="text-white bg-tertiary-0 lg:px-6 border border-red-500 hover:bg-secondary-0 p-4 font-medium text-sm focus:outline-none">Add to Cart</button>
                                 <button type="button" class="text-white  bg-red-500 lg:px-8 border border-red-500 hover:bg-tertiary-0 p-4 font-medium text-sm focus:outline-none">Buy Now</button>
                             </div>
                         </div>
@@ -151,11 +151,11 @@ import axios from 'axios'
 const route = useRoute()
 const isLoading = ref(true);
 const product = ref(null)
+
 const addToCart = async () => {
-    console.log(route.params.id)
+    console.log(product.value);
 }
 const getProduct = async () => {
-console.log(route.params.id)
 try {
     isLoading.value = true;
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
