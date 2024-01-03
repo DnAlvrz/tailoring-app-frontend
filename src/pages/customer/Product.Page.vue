@@ -6,15 +6,15 @@
                 <div v-if="!isLoading">
                     <div class="border-b lg:flex lg:flex-row bg-primary-0 border-gray-300">
                         <div class=" flex h-60 lg:h-auto lg:w-[70%] overflow-hidden" href="#">
-                            <img class="object-fill w-full" src="../../assets/Shorts.jpg" alt="product image" />
+                            <img class="object-fill w-full" :src="imagesUrl+'/'+product.images[0].name" alt="product image" />
                         </div>
                         <div class="p-4">
                             <h2 class="font-roboto font-semibold lg:text-2xl text-secondary-0 line-clamp-2">{{ product.name }}</h2>
                             <p class="font-roboto font-semibold lg:text-xl pt-2 lg:pt-4">₱ {{ product.price }}</p>
                             <div class="flex mt-2 lg:mt-4 items-center">
-                                <span class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> - </span>
-                                    <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" value="2" min="1" />
-                                <span class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> + </span>
+                                <span @click="quantity--" class="cursor-pointer rounded-l bg-gray-200 py-1 px-3.5 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> - </span>
+                                    <input class="h-8 w-8 bg-white text-center text-xs border-gray-300 outline-none" type="text" :value="quantity" min="1" />
+                                <span @click="quantity++" class="cursor-pointer rounded-r bg-gray-200 py-1 px-3 duration-100 hover:bg-tertiary-0 hover:text-blue-50"> + </span>
                             </div>
                             <div class="flex row mt-4 items-center">
                                 <div class="flex items-center">
@@ -100,7 +100,7 @@
                         </div>
                         <div class="p-2 border-b border-gray-200 bg-primary-0  pl-2">
                             <div class="flex gap-2">
-                                <img class="w-10 h-10 rounded-full" src="../../assets/vue.svg" alt="Rounded avatar">
+                                <img class="w-10 h-10 rounded-full" :src="''" alt="Rounded avatar">
                                 <div>
                                     <p>Arjhon Lahudin</p>
                                     <div class="flex items-center">
@@ -147,32 +147,49 @@ import axios from 'axios'
     initDropdowns, 
      initModals,
  } from 'flowbite'
-
+const imagesUrl = ref(import.meta.env.VITE_IMAGES_URL);
 const route = useRoute()
 const isLoading = ref(true);
-const product = ref(null)
+const product = ref(null);
+const quantity= ref(1);
 
 const addToCart = async () => {
-    console.log(product.value);
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if(cart.length) {
+        return
+    }
+    cart.forEach(cartItem => {
+        if(cartItem.id === product.value.id) {
+            return;
+        }
+    });
+    cart.push({
+        id: product.value.id,
+        name: product.value.name,
+        image: `${imagesUrl.value}/${product.value.images[0].name}`,
+        price: product.value.price,
+        quantity: quantity.value,
+        category: product.value.category,
+        total: product.value.price * quantity.value
+    })
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 const getProduct = async () => {
-try {
-    isLoading.value = true;
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
-    const config = {
-        headers: {
-            Authorization: ' test token',
-        }
-    };
-    const res = await axios.get(`${backendUrl}/products/${route.params.id}`, config)
-    product.value = res.data.product
-    console.log(product)
-} catch (error) {
-    console.log(error)
-} finally {
-    isLoading.value = false;
-    console.log(isLoading)
-}
+    try {
+        isLoading.value = true;
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const config = {
+            headers: {
+                Authorization: ' test token',
+            }
+        };
+        const res = await axios.get(`${backendUrl}/products/${route.params.id}`, config)
+        product.value = res.data.product
+    } catch (error) {
+        console.log(error)
+    } finally {
+        isLoading.value = false;
+    }
 }
  // initialize components based on data attribute selectors
  onMounted(() => {
