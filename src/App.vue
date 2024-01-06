@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Home/>
+    <AddProduct/>
     <!-- <SidebarVue/> -->
   </div>
    <!-- <RouterView/> -->
 </template>
 
 <script setup>
-import Home from './pages/Home.vue';
+import AddProduct from './pages/admin/Add.Product.vue';
 import SidebarVue from './components/Sidebar.vue';
 </script>
