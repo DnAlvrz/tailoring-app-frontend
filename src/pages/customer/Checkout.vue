@@ -45,22 +45,22 @@
                         <div class="w-full border-b border-gray-200  p-4">
 
                             <ul>
-                                <li class="flex items-center justify-between">
+                                <!-- <li class="flex items-center justify-between">
                                     <p class="font-roboto text-right p-2 w-full text-gray-400 text-sm">Merchandise Subtotal</p>
                                     <span class="font-roboto lg:w-[10%] p-2 text-right text-sm">₱1,299</span>
                                 </li>
                                 <li class="flex items-center justify-between">
                                     <p class="font-roboto text-right p-2 border-gray-300 w-full text-gray-400 text-sm">Shipping Fee</p>
                                     <span class="font-roboto p-2 lg:w-[10%] text-right text-sm">₱100</span>
-                                </li>
+                                </li> -->
                                 <li class="flex items-center justify-between">
                                     <p class="font-roboto text-right p-2 border-gray-300 w-full text-gray-400 text-sm">Order Total</p>
-                                    <span class="font-roboto lg:w-[10%] p-2 text-right text-xl">₱1,399</span>
+                                    <span class="font-roboto lg:w-[10%] p-2 text-right text-xl">₱{{ totalOrder }}</span>
                                 </li>
                             </ul>
                         </div>
                         <div class="flex justify-end p-8">
-                            <button class="bg-tertiary-0 py-2.5 px-10 font-roboto text-primary-0">Place Order</button>
+                            <button @click="placeOrder" class="bg-tertiary-0 py-2.5 px-10 font-roboto text-primary-0">Place Order</button>
                         </div>
                     </div>
                 </div>
@@ -70,16 +70,58 @@
     </div>
 </template>
 <script setup>
-import CheckoutNav from '../../components/customer/nav/Checkout.Nav.vue';
-import Footer from '../../components/customer/footer/Footer.vue';
+import axios from 'axios';
+import CheckoutNav from '@/components/customer/nav/Checkout.Nav.vue';
+import Footer from '@/components/customer/footer/Footer.vue';
 import { onMounted, ref } from 'vue'
 import {  initDropdowns, initModals} from 'flowbite'
-
- const cart = ref([])
- const getCart = () => {
+const totalOrder = ref(0);
+const cart = ref([]);
+const backendUrl = ref(import.meta.env.VITE_BACKEND_URL)
+const getCart = () => {
     cart.value  = JSON.parse(localStorage.getItem("cart")) || [];
- }
- 
+    cart.value.forEach(cartItem => {
+        totalOrder.value += cartItem.total;
+    })
+}
+
+const placeOrder = async () => {
+    const userMetaData = JSON.parse(localStorage.getItem('user'));
+
+     const config = {
+        headers: {
+            Authorization: `Bearer ${userMetaData.token}`,
+        }
+    };
+
+    const userData = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user`, config);
+
+    const orderData = {
+        user: userMetaData.id,
+        address:userData.data.address,
+        contactNumber: userData.data.phone,
+        totalAmount: totalOrder.value
+    }
+
+    const order = await axios.post(`${backendUrl.value}/orders`, orderData, config);
+
+    if(order.data && order.data.id) {
+        const productOrderData = {
+            order_id: order.data.id,
+            products: cart.value
+        }
+        const productOrder = await axios.post(`${backendUrl.value}/product-orders`, productOrderData, config);
+        if(productOrder && productOrder.data.status === 201) {
+            localStorage.setItem('cart',[])
+        }
+        else {
+            // order failed. delete order
+            
+        }
+    }
+    
+}
+
  // initialize components based on data attribute selectors
  onMounted(() => {
     initDropdowns();
