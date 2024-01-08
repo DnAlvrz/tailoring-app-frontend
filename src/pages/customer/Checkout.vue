@@ -70,23 +70,56 @@
     </div>
 </template>
 <script setup>
-import CheckoutNav from '../../components/customer/nav/Checkout.Nav.vue';
-import Footer from '../../components/customer/footer/Footer.vue';
+import axios from 'axios';
+import CheckoutNav from '@/components/customer/nav/Checkout.Nav.vue';
+import Footer from '@/components/customer/footer/Footer.vue';
 import { onMounted, ref } from 'vue'
 import {  initDropdowns, initModals} from 'flowbite'
 const totalOrder = ref(0);
-const cart = ref([])
+const cart = ref([]);
+const backendUrl = ref(import.meta.env.VITE_BACKEND_URL)
 const getCart = () => {
     cart.value  = JSON.parse(localStorage.getItem("cart")) || [];
     cart.value.forEach(cartItem => {
-        totalOrder.value+= cartItem.total
+        totalOrder.value += cartItem.total;
     })
 }
 
+const placeOrder = async () => {
+    const userMetaData = JSON.parse(localStorage.getItem('user'));
 
- 
-const placeOrder = () => {
-    console.log(cart);
+     const config = {
+        headers: {
+            Authorization: `Bearer ${userMetaData.token}`,
+        }
+    };
+
+    const userData = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user`, config);
+
+    const orderData = {
+        user: userMetaData.id,
+        address:userData.data.address,
+        contactNumber: userData.data.phone,
+        totalAmount: totalOrder.value
+    }
+
+    const order = await axios.post(`${backendUrl.value}/orders`, orderData, config);
+
+    if(order.data && order.data.id) {
+        const productOrderData = {
+            order_id: order.data.id,
+            products: cart.value
+        }
+        const productOrder = await axios.post(`${backendUrl.value}/product-orders`, productOrderData, config);
+        if(productOrder && productOrder.data.status === 201) {
+            localStorage.setItem('cart',[])
+        }
+        else {
+            // order failed. delete order
+            
+        }
+    }
+    
 }
 
  // initialize components based on data attribute selectors
