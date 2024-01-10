@@ -3,7 +3,7 @@
         <Navbar />
         <main class="flex-1 flex md:mt-[5rem] mt-[4rem] md:items-start justify-center">
             <div class=" flex md:w-2/3 flex-col bg-primary-0 mx-auto p-4">
-                <h1 class="font-roboto p-4 text-lg font-semibold text-secondary-0">Add Products</h1>
+                <h1 class="font-roboto p-4 text-lg font-semibold text-secondary-0">Edit Products</h1>
                 <div class="flex p-8 flex-col">
                     <div class="flex mt-4 justify-end items-center gap-4 flex-row">
                         <p>Product Images:</p>
