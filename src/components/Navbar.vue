@@ -47,7 +47,7 @@
                 <div class="mb-4">
                     <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" class="relative py-2" type="button">
                             <div class="t-0 absolute left-3">
-                                <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">3</p>
+                                <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">{{ cart.length }}</p>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" mt-4 h-6 w-6 text-secondary-0">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
@@ -61,8 +61,8 @@
                         </div>
                         <div class="divide-y divide-gray-100">
                             <div v-if="cart.length > 0">
-                                <a v-for="cartItem in cart" href="#" :key="cartItem.name" class="flex px-4 py-3 hover:bg-gray-100">
-                                    <div class="flex-shrink-0">
+                                <a v-for="(cartItem, index) in cart" :key="'cart`-'+index" class="flex px-4 py-3 hover:bg-gray-100">
+                                    <div class="flex-hsrink-0">
                                         <img class="w-11 h-11" :src="cartItem.image" alt="Jese image">
                                     </div>
                                     <div class="w-full ps-3">
@@ -78,7 +78,7 @@
                             </div>
                             
                         </div>
-                        <a href="#" class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100">
+                        <a href="/user/checkout" class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100">
                             <div class="inline-flex items-center ">
                                 <svg class="w-4 h-4 me-2 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
                                     <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
@@ -132,10 +132,11 @@
 const cart = ref([]);
 const backendUrl = ref(import.meta.env.VITE_BACKEND_URL)
 const getCart = () => {
-    cart.value = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.value = JSON.parse(localStorage.getItem("cart")).splice(0,3) || [];
 }
  
  onMounted(() => {
+    initDropdowns();
     getCart()
  })
 </script>
