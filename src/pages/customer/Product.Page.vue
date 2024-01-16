@@ -5,8 +5,8 @@
             <div class="rounded-lg md:w-2/3">
                 <div v-if="!isLoading">
                     <div class="border-b lg:flex lg:flex-row bg-primary-0 border-gray-300">
-                        <div class=" flex h-60 lg:h-auto lg:w-[70%] overflow-hidden" href="#">
-                            <img class="object-fill w-full" :src="imagesUrl+'/'+product.images[0].name" alt="product image" />
+                        <div class="h-60 lg:h-auto lg:w-[70%] overflow-hidden">
+                            <fwb-carousel slide  :pictures="productImages" />
                         </div>
                         <div class="p-4">
                             <h2 class="font-roboto font-semibold lg:text-2xl text-secondary-0 line-clamp-2">{{ product.name }}</h2>
@@ -23,7 +23,7 @@
                                     </svg>
                                     <svg class="w-3 h-3 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                                    </svg>
+                                    </svg> 
                                     <svg class="w-3 h-3 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                         <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                                     </svg>
@@ -138,6 +138,7 @@
 </template>
 <script setup>
 import Navbar from '@/components/Navbar.vue';
+import { FwbCarousel } from 'flowbite-vue'
 import { useRoute } from "vue-router"
 import ProductFooter from '../../components/customer/footer/Product.Footer.vue';
 import Footer from '../../components/customer/footer/Footer.vue';
@@ -145,13 +146,14 @@ import axios from 'axios'
  import { onMounted, ref } from 'vue'
  import { 
     initDropdowns, 
-     initModals,
+    initModals,
  } from 'flowbite'
 const imagesUrl = ref(import.meta.env.VITE_IMAGES_URL);
 const route = useRoute()
 const isLoading = ref(true);
 const product = ref(null);
 const quantity= ref(1);
+const productImages = ref([]);
 
 const addToCart = async () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -174,6 +176,7 @@ const addToCart = async () => {
     })
     localStorage.setItem("cart", JSON.stringify(cart));
 }
+
 const getProduct = async () => {
     try {
         isLoading.value = true;
@@ -185,16 +188,19 @@ const getProduct = async () => {
         };
         const res = await axios.get(`${backendUrl}/products/${route.params.id}`, config)
         product.value = res.data.product
+        productImages.value = product.value.images.map((image) => { return { src: imagesUrl.value + '/' + image.name } })
     } catch (error) {
         console.log(error)
     } finally {
         isLoading.value = false;
     }
 }
+
  // initialize components based on data attribute selectors
  onMounted(() => {
-     initDropdowns();
-     initModals();
-     getProduct();
+    initDropdowns();
+    initModals();
+    getProduct();
+    
  })
 </script>
