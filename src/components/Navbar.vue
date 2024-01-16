@@ -60,39 +60,23 @@
                             Recently added products
                         </div>
                         <div class="divide-y divide-gray-100">
-                            <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
-                                <div class="flex-shrink-0">
-                                    <img class="w-11 h-11" src="../assets/Pants.jpg" alt="Jese image">
-                                </div>
-                                <div class="w-full ps-3">
-                                    <div class="text-secondary-0 font-roboto mb-1.5 line-clamp-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nam praesentium tenetur odio corrupti quia ducimus quisquam. Porro iste tempora, excepturi voluptatem enim amet dolor autem voluptatum accusantium deserunt dignissimos?</div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="font-lato text-slate-900">₱449</p>
-                                </div>
-                            </a>
-                            <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
-                                <div class="flex-shrink-0">
-                                    <img class="w-11 h-11" src="../assets/Pants.jpg" alt="Jese image">
-                                </div>
-                                <div class="w-full ps-3">
-                                    <div class="text-secondary-0 font-roboto mb-1.5 line-clamp-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nam praesentium tenetur odio corrupti quia ducimus quisquam. Porro iste tempora, excepturi voluptatem enim amet dolor autem voluptatum accusantium deserunt dignissimos?</div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="font-lato text-slate-900">₱449</p>
-                                </div>
-                            </a>
-                            <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
-                                <div class="flex-shrink-0">
-                                    <img class="w-11 h-11" src="../assets/Pants.jpg" alt="Jese image">
-                                </div>
-                                <div class="w-full ps-3">
-                                    <div class="text-secondary-0 font-roboto mb-1.5 line-clamp-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nam praesentium tenetur odio corrupti quia ducimus quisquam. Porro iste tempora, excepturi voluptatem enim amet dolor autem voluptatum accusantium deserunt dignissimos?</div>
-                                </div>
-                                <div class="ml-4">
-                                    <p class="font-roboto text-slate-900">₱449</p>
-                                </div>
-                            </a>
+                            <div v-if="cart.length > 0">
+                                <a v-for="cartItem in cart" href="#" :key="cartItem.name" class="flex px-4 py-3 hover:bg-gray-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="w-11 h-11" :src="cartItem.image" alt="Jese image">
+                                    </div>
+                                    <div class="w-full ps-3">
+                                        <div class="text-secondary-0 font-roboto mb-1.5 line-clamp-1">{{ cartItem.name}}</div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="font-lato text-slate-900">₱{{ cartItem.price }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div v-else class="text-center">
+                                <span >No Items in cart</span>
+                            </div>
+                            
                         </div>
                         <a href="#" class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100">
                             <div class="inline-flex items-center ">
@@ -143,13 +127,15 @@
 </template>
 
 <script setup>
- import { onMounted } from 'vue'
- import { 
-     initDropdowns, 
- } from 'flowbite'
+ import { onMounted, ref} from 'vue'
+
+const cart = ref([]);
+const backendUrl = ref(import.meta.env.VITE_BACKEND_URL)
+const getCart = () => {
+    cart.value = JSON.parse(localStorage.getItem("cart")) || [];
+}
  
- // initialize components based on data attribute selectors
  onMounted(() => {
-     initDropdowns();
+    getCart()
  })
 </script>

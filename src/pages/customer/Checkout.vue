@@ -112,7 +112,7 @@ const placeOrder = async () => {
         }
         const productOrder = await axios.post(`${backendUrl.value}/product-orders`, productOrderData, config);
         if(productOrder && productOrder.data.status === 201) {
-            localStorage.setItem('cart',[])
+            localStorage.setItem('cart', [])
         }
         else {
             // order failed. delete order
