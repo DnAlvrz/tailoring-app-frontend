@@ -10,7 +10,7 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: () => import("@/pages/Auth/Login.vue"),
+    component: () => import("@/pages/Auth/Login.vue")
   },
   {
     path: "/register",
@@ -26,41 +26,50 @@ const routes = [
     path: "/admin",
     name: "admin",
     component: () => import("@/pages/Admin.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/admin/products",
     name: "admin products",
     component: () => import("@/pages/admin/Product.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/admin/orders",
     name: "admin orders",
     component: () => import("@/pages/admin/Order.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/admin/users",
     name: "admin users",
     component: () => import("@/pages/admin/User.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/admin/inbox",
     name: "admin inbox",
     component: () => import("@/pages/admin/Inbox.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
-  {
-    path: "/user/cart",
-    name: "cart",
-    component: () => import("@/pages/customer/Cart.vue"),
-  },
-  {
-    path: "/user/checkout",
-    name: "checkout",
-    component: () => import("@/pages/customer/Checkout.vue"),
-  },
+
   {
     path: "/user/messages",
     name: "customer messages",
     component: () => import("@/pages/customer/Messages.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/products/:id",
@@ -70,17 +79,32 @@ const routes = [
   {
     path: "/user/cart",
     name: "cart",
+    meta: {
+      requiresAuth: true,
+    },
     component: () => import("@/pages/customer/Cart.vue"),
   },
   {
     path: "/user/checkout",
     name: "checkout",
     component: () => import("@/pages/customer/Checkout.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
 ];
 
 
 const router = createRouter({routes,history:createWebHistory()});
 
+router.beforeEach((to, from, next)=> {
+  if(to.meta.requiresAuth) {
+    let user = JSON.parse(localStorage.getItem('user'));
+    if(!user) {
+      next('/login');
+    }
+  }
+  next();
+})
 
 export default router;
