@@ -44,10 +44,10 @@
                 </form>
             </div>
             <div class="flex items-center sm:gap-8 gap-2 sm:order-2 space-x-3 sm:space-x-0 rtl:space-x-reverse">
-                <div class="mb-4">
+                <div   class="mb-4">
                     <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" class="relative py-2" type="button">
                             <div class="t-0 absolute left-3">
-                                <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">{{ cart.length }}</p>
+                                <p class="flex h-2 w-2 items-center justify-center rounded-full font-roboto bg-red-600 p-3 text-xs text-primary-0">{{ cart.length && cart.length > 0 && user ? cart.length : 0  }}</p>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" mt-4 h-6 w-6 text-secondary-0">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
@@ -60,7 +60,7 @@
                             Recently added products
                         </div>
                         <div class="divide-y divide-gray-100">
-                            <div v-if="cart.length > 0">
+                            <div v-if="cart.length > 0 && user">
                                 <a v-for="(cartItem, index) in cart" :key="'cart`-'+index" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-hsrink-0">
                                         <img class="w-11 h-11" :src="cartItem.image" alt="Jese image">
@@ -72,6 +72,9 @@
                                         <p class="font-lato text-slate-900">₱{{ cartItem.price }}</p>
                                     </div>
                                 </a>
+                            </div>
+                            <div v-else-if="!user" class="text-center">
+                                <span >Please login to view your cart</span>
                             </div>
                             <div v-else class="text-center">
                                 <span >No Items in cart</span>
@@ -119,7 +122,7 @@
                         </li>
                         </ul>
                     </div>
-            </div>
+                </div>
             </div>
 
         </div>
@@ -130,13 +133,20 @@
  import { onMounted, ref} from 'vue'
 
 const cart = ref([]);
+const user = ref(null);
 const backendUrl = ref(import.meta.env.VITE_BACKEND_URL)
+
 const getCart = () => {
     cart.value = JSON.parse(localStorage.getItem("cart")).splice(0,3) || [];
 }
+
+const getUser = () => {
+    user.value = JSON.parse(localStorage.getItem('user')) || null;
+}
  
  onMounted(() => {
-    initDropdowns();
     getCart()
+    getUser();
+    initDropdowns();
  })
 </script>
