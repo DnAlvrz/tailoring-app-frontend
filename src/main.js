@@ -20,6 +20,8 @@ import {
   faMagnifyingGlass,
   faChevronRight,
   faShoppingCart,
+  faCamera,
+  faVideo
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -32,7 +34,9 @@ library.add(
     faBoxesPacking,
     faStar,
     faMagnifyingGlass,
-    faChevronRight)
+    faChevronRight,
+    faCamera,
+    faVideo)
 
 /* add icons to the library */
 library.add(faUserSecret, faShoppingCart, faBoxesPacking, faUsers)

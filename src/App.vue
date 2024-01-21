@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Rating/>
+    <EditRating/>
     <!-- <SidebarVue/> -->
   </div>
    <!-- <RouterView/> -->
 </template>
 
 <script setup>
-import Rating from './pages/customer/Rating.vue';
+import EditRating from './pages/customer/Edit.Rating.vue';
 import SidebarVue from './components/Sidebar.vue';
 </script>
