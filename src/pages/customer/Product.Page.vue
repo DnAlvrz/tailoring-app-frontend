@@ -143,11 +143,8 @@ import { useRoute } from "vue-router"
 import ProductFooter from '../../components/customer/footer/Product.Footer.vue';
 import Footer from '../../components/customer/footer/Footer.vue';
 import axios from 'axios'
- import { onMounted, ref } from 'vue'
- import { 
-    initDropdowns, 
-    initModals,
- } from 'flowbite'
+import { onMounted, ref } from 'vue'
+import { initDropdowns, initModals,} from 'flowbite'
 const imagesUrl = ref(import.meta.env.VITE_IMAGES_URL);
 const route = useRoute()
 const isLoading = ref(true);
@@ -156,7 +153,7 @@ const quantity= ref(1);
 const productImages = ref([]);
 
 const addToCart = async () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
     if(cart.length) {
         return
     }
