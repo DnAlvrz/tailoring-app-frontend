@@ -10,15 +10,16 @@
     const isLoading = ref(true);
     const products = ref([]);
     const getProducts = async () => {
+        let user = JSON.parse(localStorage.getItem("user"));
         try {
             isLoading.value = true;
             const backendUrl = import.meta.env.VITE_BACKEND_URL;
             const config = {
                 headers: {
-                    Authorization: ' test token',
+                    Authorization: `Bearer ${user.token}`,
                 }
             };
-            const res = await axios.get(`${backendUrl}/products`, config)
+            const res = await axiosget(`${backendUrl}/products`, config)
             products.value = res.data.products
         } catch (error) {
             console.log(error)

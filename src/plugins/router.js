@@ -106,9 +106,17 @@ const routes = [
     },
   },
   {
-    path: "/user/rating",
-    name: "checkout",
+    path: "/user/rating/:id",
+    name: "rating",
     component: () => import("@/pages/customer/Product.Rating.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/user/purchase",
+    name: "customer purchases",
+    component: () => import("@/pages/customer/Purchase.vue"),
     meta: {
       requiresAuth: true,
     },

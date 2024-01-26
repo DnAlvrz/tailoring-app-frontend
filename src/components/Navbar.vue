@@ -136,11 +136,11 @@ const cart = ref([]);
 const user = ref(null);
 
 const getCart = () => {
-    cart.value = localStorage.getItem("cart") ?  JSON.parse(localStorage.getItem("cart")).splice(0,3) : [];
+    cart.value  =localStorage.getItem("cart") ?  JSON.parse(localStorage.getItem("cart")).splice(0,3) : [];
 }
 
 const getUser = () => {
-    user.value = JSON.parse(localStorage.getItem('user')) || null;
+    user.value = localStorage.getItem("user") ? JSON.parse(localStorage.getItem('user')) : null;
 }
  
  onMounted(() => {
