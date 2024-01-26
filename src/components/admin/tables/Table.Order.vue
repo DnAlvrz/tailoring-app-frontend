@@ -29,220 +29,36 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="bg-white border-b hover:bg-gray-50">
+            <tr class="bg-white border-b hover:bg-gray-50" v-for="order in orders" :key="order.id">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
+                    {{ order.user.first_name + " "  + order.user.last_name }}
                 </th>
                 <td class="px-6 py-4">
-                    Apple MacBook Pro 17
+                    <ul>
+                        <li v-for="product in order.product_orders">{{ product.name }}</li>
+                    </ul>
                 </td>
                 <td class="px-6 py-4">
-                    Ayala, Zmaboanga City
+                    {{ order.address }}
                 </td>
                 <td class="px-6 py-4">
-                    $2999
+                    ${{ order.totalAmount }}
                 </td>
                 <td class="px-6 py-4">
-                    Pending
+                    {{order.status}}
                 </td>
                 <td class="px-6 py-4">
-                    10
+                     <ul>
+                        <li v-for="product in order.product_orders">{{ product.name }} - {{ product.quantity }}</li>
+                    </ul>
                 </td>
                 <td class="px-6 py-4">
-                    09253434563
+                    {{ order.contactNumber }}
                 </td>
                 <td class="px-6 py-4">
-                    <ApproveOrderModal/>
-                    <CancelModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
-                </th>
-                <td class="px-6 py-4">
-                    Apple MacBook Pro 17
-                </td>
-                <td class="px-6 py-4">
-                    Maasin, Zamboanga City
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    Approved
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    09253434563
-                </td>
-                <td class="px-6 py-4">
-                    <ViewOrderModal/>
-                    <CancelModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
-                </th>
-                <td class="px-6 py-4">
-                    Apple MacBook Pro 17
-                </td>
-                <td class="px-6 py-4">
-                    Upper Calarian, Zamboanga City
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    Pending
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    09253434563
-                </td>
-                <td class="px-6 py-4">
-                    <ApproveOrderModal/>
-                    <CancelModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
-                </th>
-                <td class="px-6 py-4">
-                    Apple MacBook Pro 17
-                </td>
-                <td class="px-6 py-4">
-                    Sinunuc, Zamboanga City
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    Approved
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    09253434563
-                </td>
-                <td class="px-6 py-4">
-                    <ViewOrderModal/>
-                    <CancelModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
-                </th>
-                <td class="px-6 py-4">
-                    Apple MacBook Pro 17
-                </td>
-                <td class="px-6 py-4">
-                    Ayala, Zmaboanga City
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    Pending
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    09253434563
-                </td>
-                <td class="px-6 py-4">
-                    <ApproveOrderModal/>
-                    <CancelModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
-                </th>
-                <td class="px-6 py-4">
-                    Apple MacBook Pro 17
-                </td>
-                <td class="px-6 py-4">
-                    Recodo, Zamboanga City
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    Pending
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    09253434563
-                </td>
-                <td class="px-6 py-4">
-                    <ApproveOrderModal/>
-                    <CancelModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
-                </th>
-                <td class="px-6 py-4">
-                    Apple MacBook Pro 17
-                </td>
-                <td class="px-6 py-4">
-                    Sinunuc, Zamboanga City
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    Pending
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    09253434563
-                </td>
-                <td class="px-6 py-4">
-                    <ApproveOrderModal/>
-                    <CancelModal/>
-                </td>
-            </tr>
-            <tr class="bg-white border-b hover:bg-gray-50">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Patrick Asmad
-                </th>
-                <td class="px-6 py-4">
-                    Apple MacBook Pro 17
-                </td>
-                <td class="px-6 py-4">
-                    Ayala, Zamboanga City
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    Pending
-                </td>
-                <td class="px-6 py-4">
-                    10
-                </td>
-                <td class="px-6 py-4">
-                    09253434563
-                </td>
-                <td class="px-6 py-4">
-                    <ApproveOrderModal/>
-                    <CancelModal/>
+                    <ApproveOrderModal :order="order.id" v-if="order.status === 'pending'"/>
+                    <ViewOrderModal :order="order" v-else/>
+                    <CancelModal  :order="order.id" v-if="order.status !== 'cancelled'"/>
                 </td>
             </tr>
         </tbody>
@@ -250,13 +66,13 @@
 </template>
 
 <script setup>
-import CancelModal from '../modals/Cancel.Modal.vue';
-import ApproveOrderModal from '../modals/Approve.Order.Modal.vue';
-import ViewOrderModal from '../modals/View.Order.Modal.vue';
 import { onMounted } from 'vue'
- import { 
-    initModals,
-    } from 'flowbite'
+import { initModals } from 'flowbite'
+import CancelModal from '@/components/admin/modals/Cancel.Modal.vue';
+import ApproveOrderModal from '@/components/admin/modals/Approve.Order.Modal.vue';
+import ViewOrderModal from '@/components/admin/modals/View.Order.Modal.vue';
+
+const props = defineProps(['orders']);
  
  // initialize components based on data attribute selectors
  onMounted(() => {

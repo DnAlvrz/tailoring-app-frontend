@@ -35,7 +35,7 @@
                      </div>
                      <ul class="py-1" role="none">
                         <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-secondary-0 hover:text-primary-0 font-roboto hover:bg-tertiary-0" role="menuitem">Sign out</a>
+                        <a @click="signOut" class="block px-4 py-2 text-sm text-secondary-0 hover:text-primary-0 font-roboto hover:bg-tertiary-0" role="menuitem">Sign out</a>
                         </li>
                      </ul>
                   </div>
@@ -109,11 +109,12 @@
 <script setup>
 import { RouterView, RouterLink } from 'vue-router';
 import { onMounted } from 'vue'
-import { 
-    initDrawers, 
-    initDropdowns, 
-   } from 'flowbite'
+import { initDrawers, initDropdowns} from 'flowbite'
 
+const signOut = () => {
+   localStorage.removeItem('user');
+   window.href('/login')
+}
 // initialize components based on data attribute selectors
 onMounted(() => {
     initDrawers();

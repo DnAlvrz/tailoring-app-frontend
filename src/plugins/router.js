@@ -10,7 +10,7 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: () => import("@/pages/Auth/Login.vue")
+    component: () => import("@/pages/Auth/Login.vue"),
   },
   {
     path: "/register",
@@ -85,9 +85,25 @@ const routes = [
     component: () => import("@/pages/customer/Cart.vue"),
   },
   {
+    path: "/users/orders/rate",
+    name: "cart",
+    meta: {
+      requiresAuth: true,
+    },
+    component: () => import("@/pages/customer/Rating.vue"),
+  },
+  {
     path: "/user/checkout",
     name: "checkout",
     component: () => import("@/pages/customer/Checkout.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/user/rating",
+    name: "checkout",
+    component: () => import("@/pages/customer/Product.Rating.vue"),
     meta: {
       requiresAuth: true,
     },
@@ -102,6 +118,9 @@ router.beforeEach((to, from, next)=> {
     let user = JSON.parse(localStorage.getItem('user'));
     if(!user) {
       next('/login');
+    }
+    if(user.access_level === 3) {
+      next("/admim/products");
     }
   }
   next();
