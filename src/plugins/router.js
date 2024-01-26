@@ -106,7 +106,7 @@ const routes = [
     },
   },
   {
-    path: "/user/rating",
+    path: "/user/rating/:id",
     name: "rating",
     component: () => import("@/pages/customer/Product.Rating.vue"),
     meta: {

@@ -10,13 +10,19 @@
                             <CardProductPurchase :order="order" v-for="order in orders"/>
                         </fwb-tab>
                         <fwb-tab name="Pending" title="Pending">
-                            <CardProductPurchase v-for="order in pending"/>
+                            <CardProductPurchase :order="order" v-for="order in pending"/>
+                        </fwb-tab>
+                        <fwb-tab name="Approved" title="Approved">
+                            <CardProductPurchase :order="order" v-for="order in approved"/>
                         </fwb-tab>
                         <fwb-tab name="Ready" title="Ready">
-                            <CardProductPurchase v-for="order in ready"/>
+                            <CardProductPurchase :order="order" v-for="order in ready"/>
                         </fwb-tab>
                         <fwb-tab name="Completed" title="Completed">
-                            <CardProductPurchase v-for="order in completed"/>
+                            <CardProductPurchase :order="order" v-for="order in completed"/>
+                        </fwb-tab>
+                        <fwb-tab name="cancelled" title="Cancelled">
+                            <CardProductPurchase :order="order" v-for="order in cancelled"/>
                         </fwb-tab>
                     </fwb-tabs>
                 </div>
@@ -38,7 +44,9 @@ const activeTab = ref('first')
 const isLoading = ref(true);
 const orders = ref([]);
 const pending = ref([]);
+const approved = ref([]);
 const ready = ref([]);
+const cancelled = ref([]);
 const completed = ref([]);
 
 const getOrders = async () => {
@@ -55,8 +63,10 @@ const getOrders = async () => {
         orders.value = res.data.orders
         pending.value = orders.value.filter(order => order.status === 'pending')
         ready.value = orders.value.filter(order => order.status === 'ready for pickup')
+        approved.value = orders.value.filter(order => order.status === 'approved')
         completed.value = orders.value.filter(order => order.status === 'delivered')
-        console.log(orders.value)
+        cancelled.value = orders.value.filter(order => order.status === 'cancelled')
+        console.log(pending.value)
     } catch (error) {
         console.log(error)
     } finally {

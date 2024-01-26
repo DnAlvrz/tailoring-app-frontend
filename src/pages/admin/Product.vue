@@ -19,7 +19,7 @@
                     Authorization: `Bearer ${user.token}`,
                 }
             };
-            const res = await a.xiosget(`${backendUrl}/products`, config)
+            const res = await axiosget(`${backendUrl}/products`, config)
             products.value = res.data.products
         } catch (error) {
             console.log(error)
