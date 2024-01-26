@@ -113,7 +113,7 @@ import { initDrawers, initDropdowns} from 'flowbite'
 
 const signOut = () => {
    localStorage.removeItem('user');
-   window.href('/login')
+   window.location.href = '/login'
 }
 // initialize components based on data attribute selectors
 onMounted(() => {
