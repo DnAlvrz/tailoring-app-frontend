@@ -28,6 +28,7 @@ const routes = [
     component: () => import("@/pages/Admin.vue"),
     meta: {
       requiresAuth: true,
+      isAdmin: true,
     },
   },
   {
@@ -36,6 +37,7 @@ const routes = [
     component: () => import("@/pages/admin/Product.vue"),
     meta: {
       requiresAuth: true,
+      isAdmin: true,
     },
   },
   {
@@ -44,6 +46,7 @@ const routes = [
     component: () => import("@/pages/admin/Order.vue"),
     meta: {
       requiresAuth: true,
+      isAdmin: true,
     },
   },
   {
@@ -52,6 +55,7 @@ const routes = [
     component: () => import("@/pages/admin/User.vue"),
     meta: {
       requiresAuth: true,
+      isAdmin: true,
     },
   },
   {
@@ -60,6 +64,7 @@ const routes = [
     component: () => import("@/pages/admin/Inbox.vue"),
     meta: {
       requiresAuth: true,
+      isAdmin: true,
     },
   },
 
@@ -114,15 +119,18 @@ const routes = [
 const router = createRouter({routes,history:createWebHistory()});
 
 router.beforeEach((to, from, next)=> {
+  let user = JSON.parse(localStorage.getItem("user"));
   if(to.meta.requiresAuth) {
-    let user = JSON.parse(localStorage.getItem('user'));
     if(!user) {
       next('/login');
     }
-    if(user.access_level === 3) {
-      next("/admim/products");
-    }
   }
+  if(to.meta.isAdmin) {
+    if (user.access_level !== 3) {
+      next("/products");
+      return;
+    }
+  } 
   next();
 })
 
