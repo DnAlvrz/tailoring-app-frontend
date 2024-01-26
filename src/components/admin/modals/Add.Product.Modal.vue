@@ -99,10 +99,11 @@
     const submit = async () => {
         const config = {
             headers: {
-                Authorization: ' test token',
+                Authorization: 'test token',
             }
         };
         const data = { ...productModel.value, images: media.value }
         const response = await axios.post(`${backendUrl.value}/products`,data, config);
+        
     }
 </script>
