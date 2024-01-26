@@ -1,11 +1,11 @@
 <template>
     <!-- Modal toggle -->
-    <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="font-roboto text-primary-0 bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2 me-2 mb-2" type="button">
+    <button :data-modal-target="'view-product'+order.id" :data-modal-toggle="'view-product' + order.id" class="font-roboto text-primary-0 bg-tertiary-0 hover:bg-secondary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-5 py-2 me-2 mb-2" type="button">
       View
     </button>
     
     <!-- Main modal -->
-    <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div :id="'view-product' + order.id" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
             <!-- Modal content -->
             <div class="relative bg-primary-0 rounded-lg shadow">
@@ -16,7 +16,7 @@
                             View Order
                         </h3>
                     </div>
-                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="default-modal">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" :data-modal-hide="'view-product' + order.id">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                         </svg>
@@ -39,45 +39,62 @@
                                         <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="Patrick Asmad" disabled>
                                     </div>
                                     <div>
-                                        <label for="last_name" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Product</label>
-                                        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="Apple MacBook Pro 17" disabled>
-                                    </div>
-                                    <div>
                                         <label for="BD" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Contact No.</label>
                                         <input type="text" id="BD" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="09253434563" disabled>
     
                                     </div>  
                                     <div>
-                                        <label for="address" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Price</label>
+                                        <label for="address" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Total</label>
                                         <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="$2999" disabled>
                                     </div>
                                     <div>
                                         <label for="contact" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Date/Time Delivered</label>
                                         <input type="text" id="contact" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="01/01/23 3:00pm" disabled>
                                     </div>
-                                    <div>
-                                        <label for="DA" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Quantity</label>
-                                        <input type="text" id="DA" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="5" disabled>
-                                    </div>
-                                    <div>
-                                        <label for="DA" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Address</label>
-                                        <input type="text" id="DA" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="Recodo, Zamboanga City" disabled>
-                                    </div>                                    <div>
-                                        <label for="DA" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Catergory</label>
-                                        <input type="text" id="DA" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="T-shirt, Cloth" disabled>
-                                    </div>
                                 </div>
-                                <div class="mb-6">
-                                    <label for="message" class="block mb-2 text-sm font-medium font-roboto text-secondary-0">Product Description</label>
-                                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-secondary-0 bg-gray-50 rounded-lg border border-gray-300 focus:ring-tertiary-0 focus:border-tertiary-0" disabled>asdasdasd</textarea>
-                                </div> 
                             </form>
                         </div>
                     </div>
+                    Product List
+                    <div v-for="product in order.product_orders" class="flex-1 flex md:mt-[1rem] mt-0 md:items-start justify-center">
+                        <a href="#" class="w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="w-[60%] ps-3">
+                                <div class="text-gray-600 line-clamp-1 dark:text-gray-400">{{ product.name }} - {{ product.id }}</div>
+                                <div class="text-sm text-gray-300"><span>Quantity: </span>{{ product.quantity }}</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                    <button v-if="order.status !== 'ready for pickup'" @click="updateStatus(order.id, 'ready for pickup')" :data-modal-hide="'view-product' + order.id" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ready for pickup</button>
+                     <button v-else @click="updateStatus(order.id, 'delivered')" :data-modal-hide="'view-product' + order.id" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Delivered</button>
+                    <button @click="updateStatus(order.id, 'cancelled')"  :data-modal-hide="'view-product'+order.id" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelled</button>
                 </div>
             </div>
         </div>
     </div>
-    
-    </template>
+</template>
+
+<script setup>
+import axios from 'axios';
+import { onMounted, ref } from 'vue'
+import { initModals } from 'flowbite'
+const backendUrl = ref(import.meta.env.VITE_BACKEND_URL);
+const props = defineProps(['order']);
+
+const updateStatus = async (orderId, status) => {
+    const config = {
+        headers: {
+            Authorization: ' test token',
+        }
+    };
+    const data = { status: status }
+    const response = await axios.put(`${backendUrl.value}/orders/${orderId}/status`, data, config);
+}
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+    initModals();
+})
+</script>
     

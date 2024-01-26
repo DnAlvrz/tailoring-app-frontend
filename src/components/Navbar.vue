@@ -134,10 +134,9 @@
 
 const cart = ref([]);
 const user = ref(null);
-const backendUrl = ref(import.meta.env.VITE_BACKEND_URL)
 
 const getCart = () => {
-    cart.value = JSON.parse(localStorage.getItem("cart")).splice(0,3) || [];
+    cart.value = localStorage.getItem("cart") ?  JSON.parse(localStorage.getItem("cart")).splice(0,3) : [];
 }
 
 const getUser = () => {

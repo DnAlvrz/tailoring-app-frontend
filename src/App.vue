@@ -1,8 +1,8 @@
 <template>
   <div>
-    <!-- <SidebarVue/> -->
+    <SidebarVue v-if="user && user.access_level === 3"/>
   </div>
-   <!-- <RouterView/> -->
+   <RouterView/>
 </template>
 
 <script setup>

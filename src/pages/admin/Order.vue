@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <TableOrder/>
+                <TableOrder :orders="orders"/>
             </div>
                 <NavPage/>
         </div>
@@ -72,15 +72,37 @@
  </template>
  
 <script setup>
+import axios from 'axios';
+import { onMounted, ref } from 'vue'
+import { initDropdowns,  } from 'flowbite'
 import Sidebar from '../../components/Sidebar.vue';
 import NavPage from '../../components/admin/pagination/Nav.Page.vue';
 import TableOrder from '../../components/admin/tables/Table.Order.vue';
- import { onMounted } from 'vue'
- import { 
-     initDropdowns,  } from 'flowbite'
- 
+const isLoading = ref(true);
+const orders = ref([]);
+
+const getOrders = async () => {
+    try {
+        isLoading.value = true;
+        const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const config = {
+            headers: {
+                Authorization: ' test token',
+            }
+        };
+        const res = await axios.get(`${backendUrl}/orders`, config)
+        orders.value = res.data.orders
+        console.log(orders.value);
+    } catch (error) {
+        console.log(error)
+    } finally {
+        isLoading.value = false;
+    }
+}
+
  // initialize components based on data attribute selectors
  onMounted(() => {
-     initDropdowns();
+    initDropdowns();
+    getOrders ();
  })
  </script>
