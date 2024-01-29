@@ -108,7 +108,7 @@ const addToCart = async () => {
         category: product.value.category,
         total: product.value.price * quantity.value
     })
-    localStorage.setItem("cart", JSON.stgify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 const getProduct = async () => {
