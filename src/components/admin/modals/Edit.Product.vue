@@ -106,6 +106,7 @@ const updateProduct = async () => {
     const data = { ...productModel.value, images: media.value }
     console.log(data);
     const response = await axios.put(`${backendUrl.value}/products/${props.product.id}`, data, config);
+    location.reload();
     
 }
 const initMedia = (newMedia) => {

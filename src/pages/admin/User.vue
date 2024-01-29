@@ -4,7 +4,7 @@
         <div class="p-4 mt-10 2xl:mx-20">
             <div class="p-2 my-4 mb-8">
                 <h1 class="text-4xl  font-bold  font-roboto text-secondary-0">List of Registered User</h1>
-                <span class="font-roboto text-sm text-secondary-0">14th August 2023</span>
+                <span class="font-roboto text-sm text-secondary-0">{{ new Date() }}</span>
             </div>
             <div class="relative overflow-x-auto">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -17,7 +17,7 @@
                                 </div>
                                 <input type="text" id="table-search" class="block p-2 font-roboto pl-10 text-sm text-secondary-0 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-tertiary-0 focus:border-tertiary-0" placeholder="Search for items">
                             </div>
-                            <div>
+                            <!-- <div>
                                 <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio" class="inline-flex items-center font-roboto text-primary-0 bg-tertiary-0 border border-gray-300 focus:outline-none hover:bg-secondary-0 hover:text-primary-0 focus:ring-4 focus:ring-tertiary-0 font-medium rounded-lg text-sm px-3 py-1.5 group" type="button">
                                     <svg class="w-3 h-3 text-primary-0 group-hover:text-primary-0 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z"/>
@@ -27,7 +27,7 @@
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                                     </svg>
                                 </button>
-                                <!-- Dropdown menu -->
+
                                 <div id="dropdownRadio" class="z-10 hidden w-48 bg-primary-0 divide-y divide-gray-100 rounded-lg shadow" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
                                     <ul class="p-3 space-y-1 text-sm text-secondary-0" aria-labelledby="dropdownRadioButton">
                                         <li>
@@ -62,7 +62,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <TableUser/>
                     </div>
@@ -77,10 +77,11 @@
 import Sidebar from '../../components/Sidebar.vue';
 import NavPage from '../../components/admin/pagination/Nav.Page.vue';
 import TableUser from '../../components/admin/tables/Table.User.vue';
- import { onMounted } from 'vue'
- import { 
-     initDropdowns, 
-     } from 'flowbite'
+const date = ref( )
+import { onMounted, ref } from 'vue'
+import { 
+    initDropdowns, 
+    } from 'flowbite'
  
  // initialize components based on data attribute selectors
  onMounted(() => {

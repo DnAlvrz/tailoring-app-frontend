@@ -109,6 +109,7 @@ const addToCart = async () => {
         total: product.value.price * quantity.value
     })
     localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload()
 }
 
 const getProduct = async () => {

@@ -42,6 +42,7 @@ const updateStatus = async (orderId) => {
     };
     const data = { status: 'cancelled' }
     const response = await axios.put(`${backendUrl.value}/orders/${orderId}/status`, data, config);
+    location.reload();
 }
 
 // initialize components based on data attribute selectors

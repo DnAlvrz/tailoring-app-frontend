@@ -2,7 +2,7 @@
     <nav class="lg:bg-white/80 bg-primary-0 max-w-full border shadow backdrop:blur-md z-10 fixed top-0 left-0 right-0">
         <div class=" flex flex-row justify-between items-center sm:flex-row sm:justify-between md:justify-evenly mx-5">
             <!-- scroll up the home if press -->
-            <a href="#" class="flex items-center space-x-3 select-none">
+            <a href="/products" class="flex items-center space-x-3 select-none">
                 <svg class="w-4 h-4 md:w-6 md:h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
                     <path d="M19 0H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1ZM2 6v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6H2Zm11 3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0h2a1 1 0 0 1 2 0v1Z"/>
                 </svg>
@@ -102,24 +102,32 @@
                     </button>
                         <!-- Dropdown menu -->
                     <div class="z-50 hidden my-4 text-base list-none bg-primary-0 divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
-                        <ul class="py-2" aria-labelledby="user-menu-button">
-                        <li>
-                            <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Account</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Purchase</a>
-                        </li>
-                        <li>
-                            <button type="button" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">
-                                Messages
-                                <span class="inline-flex items-center justify-center w-4 h-4 ms-2 text-xs font-semibold text-primary-0 bg-tertiary-0 rounded-full">
-                                    2
-                                </span>
-                            </button>
-                        </li>
-                        <li>
-                            <a href="#" class="block px-4 py-2 border-t text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Sign out</a>
-                        </li>
+                        <ul v-if="user" class="py-2" aria-labelledby="user-menu-button">
+                            <!-- <li>
+                                <a href="#" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Account</a>
+                            </li> -->
+                            <li>
+                                <a href="/user/purchase" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">My Purchase</a>
+                            </li>
+                            <!-- <li>
+                                <button type="button" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">
+                                    Messages
+                                    <span class="inline-flex items-center justify-center w-4 h-4 ms-2 text-xs font-semibold text-primary-0 bg-tertiary-0 rounded-full">
+                                        2
+                                    </span>
+                                </button>
+                            </li> -->
+                            <li @click="logout">
+                                <a href="#" class="block px-4 py-2 border-t text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Sign out</a>
+                            </li>
+                        </ul>
+                        <ul v-else class="py-2" aria-labelledby="user-menu-button">
+                            <li>
+                                <a href="/register" class="block px-4 py-2 text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Register</a>
+                            </li>
+                            <li>
+                                <a href="login" class="block px-4 py-2 border-t text-sm font-roboto text-secondary-0 hover:bg-tertiary-0 hover:text-primary-0">Login</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -142,10 +150,17 @@ const getCart = () => {
 const getUser = () => {
     user.value = localStorage.getItem("user") ? JSON.parse(localStorage.getItem('user')) : null;
 }
+
+const logout = () => {
+    localStorage.removeItem('user');
+    window.location.href = '/login'
+    4
+}
  
  onMounted(() => {
     getCart()
     getUser();
+    
     initDropdowns();
  })
 </script>

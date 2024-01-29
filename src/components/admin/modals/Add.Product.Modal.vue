@@ -104,6 +104,6 @@
         };
         const data = { ...productModel.value, images: media.value }
         const response = await axios.post(`${backendUrl.value}/products`,data, config);
-        
+        location.reload();
     }
 </script>

@@ -43,7 +43,7 @@ const login = async (credentials) => {
         id: userData.data.id,
         name: userData.data.first_name +" " +userData.data.last_name,
         token: response.data.access_token,
-        access_level: userData.data.access_level ? userData.data.access_level : 2,
+        access_level: userData.data.access_level ? userData.data.access_level : 0,
       })); 
       window.location.href = '/products';
     }

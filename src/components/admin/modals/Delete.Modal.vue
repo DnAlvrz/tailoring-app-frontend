@@ -55,6 +55,7 @@ const deleteProduct = async () => {
     } finally {
         isLoading.value = false;
         modal.hide()
+        location.reload();
     }
 }
 

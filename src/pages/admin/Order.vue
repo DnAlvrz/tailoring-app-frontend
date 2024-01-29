@@ -4,7 +4,7 @@
         <div class="p-4 mt-10 2xl:mx-20">
             <div class="p-2 my-4 mb-8">
         <h1 class="text-4xl  font-bold  font-roboto text-secondary-0">Listed Orders</h1>
-        <span class="font-roboto text-sm text-secondary-0">14th August 2023</span>
+        <span class="font-roboto text-sm text-secondary-0">{{ new Date() }}</span>
       </div>
       <div class="relative overflow-x-auto">
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">

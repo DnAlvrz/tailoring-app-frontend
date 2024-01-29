@@ -90,6 +90,7 @@ const updateStatus = async (orderId, status) => {
     };
     const data = { status: status }
     const response = await axios.put(`${backendUrl.value}/orders/${orderId}/status`, data, config);
+    location.reload();
 }
 
 // initialize components based on data attribute selectors
