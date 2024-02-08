@@ -21,7 +21,7 @@
                 <a href="">Forgot Password?</a>
             </div> -->
             <div class="text-center mb-6">
-                <span>Doesn't have an account? <br> <a class="text-blue-500 hover:underline" href="">Sign Up</a></span>
+                <span>Doesn't have an account? <br> <a class="text-blue-500 hover:underline" href="/register">Sign Up</a></span>
             </div>
             <button @click="login()" class="text-white bg-tertiary-0 hover:bg-secondary-0 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center">LOGIN</button>
 

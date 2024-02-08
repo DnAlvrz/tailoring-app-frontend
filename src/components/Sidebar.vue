@@ -26,11 +26,10 @@
                   </div>
                   <div class="z-50 hidden my-4 text-base list-none bg-primary-0 divide-y divide-gray-100 rounded shadow" id="dropdown-user">
                      <div class="px-4 py-3" role="none">
-                        <p class="text-base font-semibold font-roboto text-secondary-0" role="none">
-                        Archie Amparado
+                        <p v-if="user" class="text-base font-semibold font-roboto text-secondary-0" role="none">
+                        {{ user.name }}
                         </p>
                         <p class="text-sm font-normal font-roboto text-secondary-0 truncate" role="none">
-                        archie.amparado@flowbite.com
                         </p>
                      </div>
                      <ul class="py-1" role="none">
@@ -59,7 +58,7 @@
                </a>
                </Router-link>
             </li>
-            <li>
+            <!-- <li>
                <RouterLink to="/admin/users">
                   <a href="" class="flex items-center p-2 text-secondary-0 rounded-lg focus:bg-tertiary-0 focus:text-primary-0 hover:bg-tertiary-0 hover:text-primary-0 group">
                   <svg class="flex-shrink-0 w-5 h-5 text-secondary-0 transition duration-75 group-hover:text-primary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
@@ -68,7 +67,7 @@
                   <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
                </a>
                </RouterLink>
-            </li>
+            </li> -->
             <li>
                <RouterLink to="/admin/products">
                   <a href="" class="flex items-center p-2 text-secondary-0 rounded-lg hover:bg-tertiary-0 hover:text-primary-0 group">
@@ -90,7 +89,7 @@
                </Router-link>
             </li>
             <li>
-               <RouterLink to="/admin/inbox">
+               <!-- <RouterLink to="/admin/inbox">
                   <a class="flex items-center p-2 text-secondary-0 rounded-lg hover:bg-tertiary-0 hover:text-primary-0 group">
                   <svg class="flex-shrink-0 w-5 h-5 text-secondary-0 transition duration-75 group-hover:text-primary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                      <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
@@ -98,7 +97,7 @@
                   <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
                   <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-primary-0 bg-secondary-0 rounded-full">3</span>
                </a>
-               </RouterLink>
+               </RouterLink> -->
             </li>
          </ul>
       </div>
@@ -108,8 +107,13 @@
 
 <script setup>
 import { RouterView, RouterLink } from 'vue-router';
-import { onMounted } from 'vue'
+import { onMounted, ref} from 'vue'
 import { initDrawers, initDropdowns} from 'flowbite'
+let user = ref(null)
+
+const getUser = () => {
+   user.value = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
+}
 
 const signOut = () => {
    localStorage.removeItem('user');
@@ -117,8 +121,9 @@ const signOut = () => {
 }
 // initialize components based on data attribute selectors
 onMounted(() => {
-    initDrawers();
-    initDropdowns();
+   initDrawers();
+   initDropdowns();
+   getUser();
 })
 
 </script>

@@ -17,7 +17,7 @@
         </div>
         <div class="flex justify-end p-4">
             <p v-if="order.status==='pending'" class="text-base font-roboto text-secondary-0">Order Total: <span class="text-2xl">${{ order.totalAmount }}</span></p>
-            <button @click="redirect(order.id)" v-if="order.status === 'delivered'" type="button" class="block text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Default</button>
+            <button @click="redirect(order.id)" v-if="order.status === 'delivered'" type="button" class="block text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Rate</button>
         </div>
     </a>
 </template>

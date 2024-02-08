@@ -38,7 +38,6 @@
                             </div>
                             <div class="lg:flex hidden mt-6 ml-7 flex-row gap-4">
                                 <button @click="addToCart" type="button" class="text-white bg-tertiary-0 lg:px-6 border border-red-500 hover:bg-secondary-0 p-4 font-medium text-sm focus:outline-none">Add to Cart</button>
-                                <button type="button" class="text-white  bg-red-500 lg:px-8 border border-red-500 hover:bg-tertiary-0 p-4 font-medium text-sm focus:outline-none">Buy Now</button>
                             </div>
                         </div>
                     </div>

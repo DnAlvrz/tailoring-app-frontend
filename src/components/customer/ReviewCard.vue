@@ -3,7 +3,7 @@
         <div class="flex gap-2">
             <img class="w-10 h-10 rounded-full" src="../../assets/vue.svg" alt="Rounded avatar">
             <div>
-                <p>Arjhon Lahudin</p>
+                <p>{{ review.order.user.first_name + ' ' + review.order.user.last_name }}</p>
                 <div class="flex items-center">
                     <fwb-rating  size="md" :rating="review.order.rating.rating" />
                 </div>
@@ -18,4 +18,5 @@
 <script setup>
 import { FwbRating } from 'flowbite-vue'
 const props = defineProps(['review']);
+
 </script>

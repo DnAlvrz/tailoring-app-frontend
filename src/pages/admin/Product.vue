@@ -48,7 +48,7 @@
             </div>
             <div class="relative ">
                 <div class="relative  shadow-md sm:rounded-lg">
-                    <SearchBox />
+                    <!-- <SearchBox /> -->
                     <div  v-if="!isLoading" >
                         <TableProductVue :products="products" />
                     </div>
@@ -62,7 +62,6 @@
                         </div>
                     </div>
                 </div>
-                <NavPage/>
             </div>
         </div>
     </div>

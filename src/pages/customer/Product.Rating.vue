@@ -10,7 +10,7 @@
                     </button>
                     <h1 class="font-roboto text-lg font-semibold text-secondary-0">Rate Product</h1>
                 </div>
-                <div>
+                <!-- <div>
                     <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <div class="flex-shrink-0">
                             <img class="w-14 h-14" src="../../assets/cloth.jpg" alt="Jese image">
@@ -20,7 +20,7 @@
                             <div class="text-sm text-gray-300"><span>Category: </span>asdasdasdasd</div>
                         </div>
                     </a>
-                </div>
+                </div> -->
                 <div class="flex gap-12 px-4 py-3">
                     <span>Product Quality</span>
                     <div class="flex gap-3">
@@ -57,13 +57,16 @@ const backendUrl = ref(import.meta.env.VITE_BACKEND_URL);
 const rating = ref(1)
 const orderId = ref(route.params.id);
 const message = ref("");
+
 const updateRating = (e) => {
     rating.value = e.target.getAttribute('data-bind')
 }
+
 const submit = async () => {
+let user = localStorage.getItem('user')? JSON.parse(localStorage.getItem('user')):null
     const config = {
         headers: {
-            Authorization: 'test token',
+            Authorization: `Bearer ${user.token}`,
         }
     };
     const data = {

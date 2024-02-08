@@ -43,9 +43,10 @@ const deleteProduct = async () => {
     try {
         isLoading.value = true;
         const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
         const config = {
             headers: {
-                Authorization: ' test token',
+                Authorization: `Bearer ${user.token}`,
             }
         };
         console.log(`${backendUrl}/products/${props.productId}`);

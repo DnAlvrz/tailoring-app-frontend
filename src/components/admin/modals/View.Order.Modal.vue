@@ -36,20 +36,20 @@
                                 <div class="grid gap-6 mb-6 md:grid-cols-2">
                                     <div>
                                         <label for="first_name" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Customer Name</label>
-                                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="Patrick Asmad" disabled>
+                                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" :value="order.user.first_name + ' ' + order.user.last_name" disabled>
                                     </div>
                                     <div>
                                         <label for="BD" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Contact No.</label>
-                                        <input type="text" id="BD" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="09253434563" disabled>
+                                        <input type="text" id="BD" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" :value="order.user.phone" disabled>
     
                                     </div>  
                                     <div>
                                         <label for="address" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Total</label>
-                                        <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="$2999" disabled>
+                                        <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" :value="'₱'+order.totalAmount" disabled>
                                     </div>
                                     <div>
-                                        <label for="contact" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Date/Time Delivered</label>
-                                        <input type="text" id="contact" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" value="01/01/23 3:00pm" disabled>
+                                        <label for="contact" class="block mb-2 text-sm font-medium text-secondary-0 font-roboto">Date ordered</label>
+                                        <input type="text" id="contact" class="bg-gray-50 border border-gray-300 text-secondary-0 font-roboto text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" :value="order.created_at" disabled>
                                     </div>
                                 </div>
                             </form>
@@ -81,15 +81,17 @@ import { onMounted, ref } from 'vue'
 import { initModals } from 'flowbite'
 const backendUrl = ref(import.meta.env.VITE_BACKEND_URL);
 const props = defineProps(['order']);
-
+const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+console.log(props);
 const updateStatus = async (orderId, status) => {
     const config = {
         headers: {
-            Authorization: ' test token',
+            Authorization: `Bearer ${user.token}`,
         }
     };
     const data = { status: status }
     const response = await axios.put(`${backendUrl.value}/orders/${orderId}/status`, data, config);
+
     location.reload();
 }
 

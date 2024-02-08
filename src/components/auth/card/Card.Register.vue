@@ -44,7 +44,7 @@
                 <input  v-model="user.confirm_password" type="password" id="confirm_password" class="bg-gray-50 border border-gray-300 text-secondary-0 text-sm rounded-lg focus:ring-tertiary-0 focus:border-tertiary-0 block w-full p-2.5" placeholder="•••••••••" required>
             </div> 
             <div class="text-center mb-6">
-                <span>Already have an account? <br> <a class="text-blue-500 hover:underline" href="">Log In</a></span>
+                <span>Already have an account? <br> <a class="text-blue-500 hover:underline" href="/login">Log In</a></span>
             </div>
             <button @click="submit()" type="submit" class="text-white bg-tertiary-0 hover:bg-secondary-0 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center">REGISTER</button>
         </div>

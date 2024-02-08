@@ -35,14 +35,19 @@ const backendUrl = ref(import.meta.env.VITE_BACKEND_URL);
 const props = defineProps(['order']);
 
 const updateStatus = async (orderId) => {
-    const config = {
-        headers: {
-            Authorization: ' test token',
-        }
-    };
-    const data = { status: 'cancelled' }
-    const response = await axios.put(`${backendUrl.value}/orders/${orderId}/status`, data, config);
-    location.reload();
+    try {
+        const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+        const config = {
+            headers: {
+                Authorization: `Bearer ${user.token}`,
+            }
+        };
+        const data = { status: 'cancelled' }
+        const response = await axios.put(`${backendUrl.value}/orders/${orderId}/status`, data, config);
+        location.reload();
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 // initialize components based on data attribute selectors

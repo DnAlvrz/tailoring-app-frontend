@@ -66,7 +66,6 @@ const getOrders = async () => {
         approved.value = orders.value.filter(order => order.status === 'approved')
         completed.value = orders.value.filter(order => order.status === 'delivered')
         cancelled.value = orders.value.filter(order => order.status === 'cancelled')
-        console.log(pending.value)
     } catch (error) {
         console.log(error)
     } finally {

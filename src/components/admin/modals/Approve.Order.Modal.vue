@@ -24,11 +24,12 @@ import { onMounted, ref} from 'vue'
 import { initModals } from 'flowbite'
 const backendUrl = ref(import.meta.env.VITE_BACKEND_URL);
 const props = defineProps(['order']);
+const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
 const updateStatus = async (orderId) => {
     const config = {
         headers: {
-            Authorization: ' test token',
+            Authorization: `Bearer ${user.token}`,
         }
     };
     const data = { status:'approved' }

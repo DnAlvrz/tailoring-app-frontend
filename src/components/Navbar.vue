@@ -1,6 +1,6 @@
 <template>
     <nav class="lg:bg-white/80 bg-primary-0 max-w-full border shadow backdrop:blur-md z-10 fixed top-0 left-0 right-0">
-        <div class=" flex flex-row justify-between items-center sm:flex-row sm:justify-between md:justify-evenly mx-5">
+        <div class=" flex flex-row mx-auto justify-between w-4/5 sm:flex-row sm:justify-between md:justify-between mx-5">
             <!-- scroll up the home if press -->
             <a href="/products" class="flex items-center space-x-3 select-none">
                 <svg class="w-4 h-4 md:w-6 md:h-6 text-secondary-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
@@ -31,7 +31,7 @@
                         </form>
                     </div>
                 </div>
-                <form class="hidden md:block">   
+                <!-- <form class="hidden md:block">   
                     <label for="default-search" class="mb-2 text-sm font-medium font-roboto text-secondary-0 sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -41,7 +41,7 @@
                         </div>
                         <input type="search" id="default-search" class="block w-[500px] max-lg:w-full p-4 ps-10 font-roboto text-sm text-secondary-0 border border-gray-300 rounded-lg bg-gray-50 focus:ring-tertiary-0 focus:border-tertiary-0" placeholder="Search our store" required>
                     </div>
-                </form>
+                </form> -->
             </div>
             <div class="flex items-center sm:gap-8 gap-2 sm:order-2 space-x-3 sm:space-x-0 rtl:space-x-reverse">
                 <div   class="mb-4">
@@ -144,7 +144,7 @@ const cart = ref([]);
 const user = ref(null);
 
 const getCart = () => {
-    cart.value  =localStorage.getItem("cart") ?  JSON.parse(localStorage.getItem("cart")).splice(0,3) : [];
+    cart.value = localStorage.getItem("cart") ?  JSON.parse(localStorage.getItem("cart")).splice(0,3) : [];
 }
 
 const getUser = () => {
