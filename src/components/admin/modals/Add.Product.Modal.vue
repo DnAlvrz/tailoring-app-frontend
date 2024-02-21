@@ -94,12 +94,12 @@
     const changeMedia = (newMedia) => {
         media.value = newMedia
     }
-
+    const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
     const submit = async () => {
         const config = {
             headers: {
-                Authorization: 'test token',
+                Authorization: `Bearer ${user.token}`,
             }
         };
         const data = { ...productModel.value, images: media.value }
